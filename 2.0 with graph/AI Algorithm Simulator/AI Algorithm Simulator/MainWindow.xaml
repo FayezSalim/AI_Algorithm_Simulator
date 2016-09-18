@@ -1,0 +1,919 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:native="clr-namespace:AI_Algorithm_Simulator.classes"
+		xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:local="clr-namespace:AI_Algorithm_Simulator"
+     	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="mainwindow" mc:Ignorable="d" x:Class="AI_Algorithm_Simulator.MainWindow"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Height="550.263" Width="1158.948" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="White" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+
+    <Window.Resources>
+        <native:BoolToVisibilityConverter x:Key="boolToVis" />
+        <Style TargetType="{x:Type TextBlock}" 
+        x:Key="GridBlockStyle">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Visibility" 
+          Value="{Binding Path=IsSelected, 
+              RelativeSource={RelativeSource FindAncestor, 
+                  AncestorType={x:Type ListViewItem}},
+              Converter={StaticResource boolToVis}, 
+                  ConverterParameter=False}" />
+        </Style>
+
+        <Style TargetType="{x:Type FrameworkElement}" 
+        x:Key="GridEditStyle">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Visibility" 
+          Value="{Binding Path=IsSelected, 
+              RelativeSource={RelativeSource FindAncestor, 
+                  AncestorType={x:Type ListViewItem}},
+              Converter={StaticResource boolToVis}, 
+                  ConverterParameter=True}" />
+            <Setter Property="Width" Value="100"></Setter>
+        </Style>
+
+
+        <Storyboard x:Key="close_hover"/>
+        <Storyboard x:Key="close_hover_leave"/>
+        <Storyboard x:Key="dataset_waiting">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect1">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.4" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.7" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect2">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect4">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect3">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="algorithm_waiting">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect4">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect3">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect2">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.5" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.8" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="execution_waiting">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect3">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.5" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.8" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="report_waiting">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="menurect4">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.4" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.8" Value="#FFF9E949"/>
+                <EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="show_cityprop">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="City_propUI">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="City_propUI">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="hide_cityprop">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="City_propUI">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="City_propUI">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="editbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="editbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="editbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="editbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="nextbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="nextbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="backbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="backbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="backbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="backbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="settingsbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="settingsbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="settingsbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="settingsbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="refresh_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="refreshbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="refreshbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="refreshbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="dragbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="dragbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="dragbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="dragbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="toolsettingsbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="drawsettingbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="toolsettingsbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="drawsettingbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="savebtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="savebtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="savebtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="savebtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="openbtn_hover">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="openbtn">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="openbtn_leave">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="openbtn">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="addbutton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Image x:Name="algo_addbtn" Opacity="0.6" Source="menu imgs/MB_0019_plus.png" Stretch="Fill"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="deletebutton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Image x:Name="algo_delbtn" Opacity="0.6" Source="menu imgs/delete.png" Stretch="Fill"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="ant_moving" RepeatBehavior="Forever">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ant2">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ant1">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="wizardbutton_animation" AutoReverse="True" RepeatBehavior="Forever"/>
+        <Storyboard x:Key="show_wizard"/>
+        <Storyboard x:Key="hide_wizard"/>
+        <Storyboard x:Key="wizard_moving">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image_6">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="algo_running">
+        	<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="progress_circle">
+        		<EasingColorKeyFrame KeyTime="0" Value="#0C000000"/>
+        		<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#DA000000"/>
+        	</ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="rotate">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="loading">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:3" Value="359.781"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="graph_btn_enter">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="graph_btn">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.7"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="graph_btn_leave">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="graph_btn">
+        		<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+        		<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="graph_back_btn">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="graph_back_btn">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.55"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="graph_back_btn_leave">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="graph_back_btn">
+        		<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+        		<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.55"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="editbtn">
+            <BeginStoryboard x:Name="editbtn_hover_BeginStoryboard" Storyboard="{StaticResource editbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="editbtn">
+            <BeginStoryboard x:Name="editbtn_leave_BeginStoryboard" Storyboard="{StaticResource editbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="nextbtn">
+            <BeginStoryboard x:Name="nextbtn_hover_BeginStoryboard1" Storyboard="{StaticResource nextbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="nextbtn">
+            <BeginStoryboard x:Name="nextbtn_leave_BeginStoryboard" Storyboard="{StaticResource nextbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="backbtn">
+            <BeginStoryboard x:Name="backbtn_hover_BeginStoryboard1" Storyboard="{StaticResource backbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="backbtn">
+            <BeginStoryboard x:Name="backbtn_leave_BeginStoryboard" Storyboard="{StaticResource backbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="settingsbtn">
+            <BeginStoryboard x:Name="settingsbtn_hover_BeginStoryboard1" Storyboard="{StaticResource settingsbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="settingsbtn">
+            <BeginStoryboard x:Name="settingsbtn_leave_BeginStoryboard" Storyboard="{StaticResource settingsbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="refreshbtn">
+            <BeginStoryboard x:Name="refresh_hover_BeginStoryboard1" Storyboard="{StaticResource refresh_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="refreshbtn">
+            <BeginStoryboard x:Name="refreshbtn_leave_BeginStoryboard" Storyboard="{StaticResource refreshbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="dragbtn">
+            <BeginStoryboard x:Name="dragbtn_hover_BeginStoryboard1" Storyboard="{StaticResource dragbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="dragbtn">
+            <BeginStoryboard x:Name="dragbtn_leave_BeginStoryboard" Storyboard="{StaticResource dragbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="drawsettingbtn">
+            <BeginStoryboard x:Name="toolsettingsbtn_hover_BeginStoryboard1" Storyboard="{StaticResource toolsettingsbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="drawsettingbtn">
+            <BeginStoryboard x:Name="toolsettingsbtn_leave_BeginStoryboard" Storyboard="{StaticResource toolsettingsbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="savebtn">
+            <BeginStoryboard x:Name="savebtn_hover_BeginStoryboard1" Storyboard="{StaticResource savebtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="savebtn">
+            <BeginStoryboard x:Name="savebtn_leave_BeginStoryboard" Storyboard="{StaticResource savebtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="openbtn">
+            <BeginStoryboard x:Name="openbtn_hover_BeginStoryboard1" Storyboard="{StaticResource openbtn_hover}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="openbtn">
+            <BeginStoryboard x:Name="openbtn_leave_BeginStoryboard" Storyboard="{StaticResource openbtn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource ant_moving}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="graph_back_btn">
+        	<BeginStoryboard x:Name="graph_back_btn_BeginStoryboard" Storyboard="{StaticResource graph_back_btn}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="graph_back_btn">
+        	<BeginStoryboard x:Name="graph_back_btn_leave_BeginStoryboard" Storyboard="{StaticResource graph_back_btn_leave}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="graph_btn">
+        	<BeginStoryboard x:Name="graph_btn_enter_BeginStoryboard" Storyboard="{StaticResource graph_btn_enter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="graph_btn">
+        	<BeginStoryboard x:Name="graph_btn_leave_BeginStoryboard" Storyboard="{StaticResource graph_btn_leave}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="root" Background="White">
+        <Grid x:Name="dataset_grid" HorizontalAlignment="Left" Height="464.956" Margin="2.296,85.307,0,0" VerticalAlignment="Top" Width="1154.186" Visibility="Hidden" d:IsLocked="True">
+            <Grid x:Name="canvas_toolbar" Margin="10,390,10,8.75">
+                <Rectangle x:Name="toolbar_backgorund" Fill="#FFF1F1F1" HorizontalAlignment="Left" Height="423.706" VerticalAlignment="Top" Width="1134.186" Stroke="Black" Margin="0,-357.5,0,0">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Opacity="0.545" RenderingBias="Quality" ShadowDepth="6"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Image x:Name="editbtn" HorizontalAlignment="Left" Height="30" Margin="1092.546,25,0,0" VerticalAlignment="Top" Width="30" Source="menu imgs/MB_0011_pen.png" Opacity="0.6" ToolTip="edit cities" MouseLeftButtonDown="editbtn_MouseLeftButtonDown"/>
+                <Image x:Name="dragbtn" HorizontalAlignment="Left" Height="30" Margin="1042.546,26.25,0,0" VerticalAlignment="Top" Width="30" Source="menu imgs/MB_0040_Hand.png" Opacity="0.6" ToolTip="rearrange cities" MouseLeftButtonDown="dragbtn_MouseLeftButtonDown"/>
+                <Image x:Name="savebtn" HorizontalAlignment="Left" Height="30" Margin="933.796,26,0,0" VerticalAlignment="Top" Width="30" Source="menu imgs/MB_0008_save.png" Opacity="0.6" ToolTip="save" MouseLeftButtonDown="savebtn_MouseLeftButtonDown"/>
+                <Image x:Name="drawsettingbtn" HorizontalAlignment="Left" Height="30" Margin="989.546,25,0,0" VerticalAlignment="Top" Width="30" Source="menu imgs/MB_0010_tasks.png" Opacity="0.6" ToolTip="graphic settings"/>
+                <Image x:Name="openbtn" HorizontalAlignment="Left" Height="30" Margin="876.296,26,0,0" VerticalAlignment="Top" Width="30" Source="menu imgs/MB_0007_book.png" Opacity="0.6" ToolTip="open" MouseLeftButtonDown="openbtn_MouseLeftButtonDown"/>
+                <TextBox x:Name="rec_cost" HorizontalAlignment="Left" Height="27.5" Margin="516.25,28.419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187.5"/>
+                <TextBox x:Name="rec_time" HorizontalAlignment="Left" Height="27.5" Margin="166.25,28.419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187.5"/>
+                <Label Content="Recommended Cost" HorizontalAlignment="Left" Margin="370,29.959,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,0.53" FontSize="14.667"/>
+                <Label Content="Recommended Time" HorizontalAlignment="Left" Margin="12.5,28.419,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.427,0.53" FontSize="14.667"/>
+            </Grid>
+            <DockPanel Margin="10,33.87,10,75.706" Cursor="Cross" Height="355.38">
+                <Canvas Background="#FFFFF0D6" x:Name="canvasArea" Width="1128.07" MouseLeftButtonDown="canvasArea_MouseLeftButtonDown" MouseRightButtonDown="canvasArea_MouseRightButtonDown" Margin="0,0,0,-12.5" MouseLeftButtonUp="canvasArea_MouseLeftButtonUp" MouseMove="canvasArea_MouseMove"/>
+
+            </DockPanel>
+            <TextBlock HorizontalAlignment="Left" Height="37.62" Margin="10,0,0,0" TextWrapping="Wrap" Text="Travelling Salesman Problem (Symmetric)" VerticalAlignment="Top" Width="426.454" FontSize="18.667"/>
+            <GridSplitter HorizontalAlignment="Left" Height="2" Margin="10,403.443,0,0" VerticalAlignment="Top" Width="1134.186" Background="#FF515151"/>
+        </Grid>
+        <Grid x:Name="Menubar" Margin="0,26.74,0,0" Height="85.948" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1158.928">
+            <Rectangle x:Name="menurect4" HorizontalAlignment="Left" Height="47.342" Margin="726.328,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="240" StrokeThickness="0" Fill="White"/>
+            <Rectangle x:Name="menurect3" HorizontalAlignment="Left" Height="47.341" Margin="486.328,-1.413,0,0" Stroke="Black" VerticalAlignment="Top" Width="240" StrokeThickness="0" Fill="White"/>
+            <Rectangle x:Name="menurect2" HorizontalAlignment="Left" Height="47.341" Margin="240,0.852,0,0" Stroke="Black" VerticalAlignment="Top" Width="246.328" StrokeThickness="0" Fill="White"/>
+            <Rectangle x:Name="menurect1" HorizontalAlignment="Left" Height="47.341" Margin="0,-1.413,0,0" Stroke="Black" VerticalAlignment="Top" Width="240" StrokeThickness="0" Fill="White"/>
+            <Rectangle x:Name="progressrect" Fill="#FFA0A0A0" HorizontalAlignment="Left" Height="4.038" Margin="0,45.374,0,0" VerticalAlignment="Top" Width="1158.928"/>
+            <TextBlock HorizontalAlignment="Left" Height="43.193" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.211" FontSize="26.667" FontFamily="Arial" Foreground="{DynamicResource AppFontColor}" Text="1. Dataset" Margin="37.104,7.426,0,0" Background="#00000000"/>
+            <TextBlock HorizontalAlignment="Left" Height="43.193" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.21" FontSize="26.667" FontFamily="Arial" Foreground="{DynamicResource AppFontColor}" Margin="282.5,7.426,0,0" Background="#00000000"><Run Text="2. "/><Run Text="Algorithm"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="43.193" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.21" FontSize="26.667" FontFamily="Arial" Foreground="{DynamicResource AppFontColor}" Text="3. Execution" Margin="527,7.426,0,0" Background="#00000000"/>
+            <TextBlock HorizontalAlignment="Left" Height="43.193" TextWrapping="Wrap" VerticalAlignment="Top" Width="126.054" FontSize="26.667" FontFamily="Arial" Foreground="{DynamicResource AppFontColor}" Text="4.Report" Margin="785.078,7.426,0,0" Background="#00000000"/>
+            <Grid x:Name="Panel" Margin="966.328,-1.413,0,40.574" Background="#FFE8FDFF">
+                <Border BorderBrush="Black" BorderThickness="1,0,0,0" HorizontalAlignment="Left" Height="47.317" Margin="0,-0.76,-0.078,0" VerticalAlignment="Top" Width="192.678"/>
+                <Image x:Name="backbtn" HorizontalAlignment="Left" Height="35" Margin="7.25,6.5,0,0" VerticalAlignment="Top" Width="35" Source="menu imgs/MB_0006_back.png" Opacity="0.5" MouseLeftButtonDown="backbtn_MouseLeftButtonDown" ToolTip="back"/>
+                <Image x:Name="settingsbtn" HorizontalAlignment="Left" Height="40" Margin="102.75,6.5,0,0" VerticalAlignment="Top" Width="35" Source="menu imgs/MB_0020_sett-big.png" Opacity="0.5" ToolTip="settings"/>
+                <Image x:Name="refreshbtn" HorizontalAlignment="Left" Height="40" Margin="149.25,7.5,0,-0.713" VerticalAlignment="Top" Width="35" Source="menu imgs/MB_0015_reload.png" Opacity="0.5" ToolTip="reset"/>
+                <Image x:Name="nextbtn" HorizontalAlignment="Left" Height="40" Margin="54.75,6.5,0,0" VerticalAlignment="Top" Width="35" Source="menu imgs/MB_0006_next.png" MouseLeftButtonDown="nextbtn_MouseLeftButtonDown" Opacity="0.5" ToolTip="next"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Titlebar" Height="35.952" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1158.948" d:IsLocked="True">
+            <Rectangle Name="title_back" Fill="#FF9BB0F9" HorizontalAlignment="Left" Height="25.952" VerticalAlignment="Top" Width="1158.948"/>
+            <TextBlock Name="title_name" HorizontalAlignment="Left" Height="30.688" TextWrapping="Wrap" VerticalAlignment="Top" Width="480.263" FontSize="21.333" FontFamily="Arial" Foreground="#FF3C3C3C" Text="Artificial Intelligence Algorithm Simulator" Margin="356.063,0,0,0" Background="#00000000" FontWeight="Bold"/>
+            <Grid x:Name="minmizebutton" Margin="1088.142,0,37.911,12.268">
+                <Rectangle x:Name="minback" HorizontalAlignment="Left" Height="23.684" VerticalAlignment="Top" Width="32.895" Fill="#FF9B9B9B"/>
+                <Rectangle x:Name="minfore" Fill="White" HorizontalAlignment="Left" Height="5" Margin="7.905,11.316,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="15"/>
+            </Grid>
+            <Button x:Name="closebtn" Content="Button" HorizontalAlignment="Left" Height="12.004" Margin="1121.045,-4.476,-1.311,28.424" Style="{DynamicResource closebutton}" VerticalAlignment="Bottom" Width="39.214" Click="closebtn_Click"/>
+        </Grid>
+        <Grid x:Name="City_propUI" Margin="0,74.057,0.02,0" Visibility="Collapsed" d:IsLocked="True">
+            <Rectangle x:Name="background" Fill="Black" HorizontalAlignment="Left" Height="476.206" Stroke="Black" VerticalAlignment="Top" Width="1158.928" Opacity="0.795"/>
+            <Rectangle x:Name="city_prop" Fill="White" HorizontalAlignment="Left" Height="317.847" Margin="338.036,59.881,0,0" Stroke="Black" VerticalAlignment="Top" Width="509.702" RadiusY="3.964" RadiusX="3.964" StrokeThickness="3"/>
+            <TextBlock HorizontalAlignment="Left" Height="35" Margin="357.658,75,0,0" TextWrapping="Wrap" Text="City Properties" VerticalAlignment="Top" Width="141.25" FontSize="18.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.447"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.6"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <ListView x:Name="CityPropertyView" ItemsSource=
+        "{Binding City_Metric_Collection}" Margin="371.25,118.44,359.98,161.252">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding CityName}" 
+											Style="{StaticResource GridBlockStyle}"/>
+                                        <TextBox Text="{Binding CityName}" IsEnabled="False"
+											Style="{StaticResource GridEditStyle}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="CityName" Content="City Name" />
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding CityCost}" 
+											Style="{StaticResource GridBlockStyle}"/>
+                                        <TextBox Text="{Binding CityCost}" 
+											Style="{StaticResource GridEditStyle}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="CityCost" Content="City Cost" />
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding CityTime}" 
+											Style="{StaticResource GridBlockStyle}"/>
+                                        <TextBox Text="{Binding CityTime}" 
+											Style="{StaticResource GridEditStyle}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="CityTime" Content="City Time" />
+                        </GridViewColumn>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="set_city_prop" Content="OK" HorizontalAlignment="Left" Margin="707.5,330.943,0,0" VerticalAlignment="Top" Width="102.5" Height="29.96" Click="set_city_prop_Click"/>
+            <TextBlock x:Name="city_name_UI" HorizontalAlignment="Left" Height="35" Margin="503.908,72.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141.25" FontSize="18.667" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.447"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.6"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Grid>
+        <Grid x:Name="algorithm_grid" Margin="10,94.938,6.268,10" Visibility="Hidden" d:IsLocked="True">
+            <ListBox x:Name="algo_list" HorizontalAlignment="Left" Height="259.976" Margin="0,50.25,0,0" VerticalAlignment="Top" Width="273.75" SelectionChanged="algo_list_SelectionChanged" d:IsLocked="True"/>
+            <ComboBox x:Name="algo_selector_combo" HorizontalAlignment="Left" SelectedIndex="0" Height="37.688" Margin="0,7.562,0,0" VerticalAlignment="Top" FontSize="18" Width="273.75" SelectionChanged="algo_selector_combo_SelectionChanged" d:IsLocked="True">
+                <!-- <ComboBoxItem Content="Breadth First Search" FontSize="18"/>
+                <ComboBoxItem Content="Depth First Search" FontSize="18"/>-->
+                <ComboBoxItem Content="Genetic Algorithm" FontSize="18"/>
+                <ComboBoxItem Content="Ant Colony Optimization" FontSize="18"/>
+            </ComboBox>
+            <GridSplitter HorizontalAlignment="Left" Height="3" Margin="2.698,325.062,0,0" VerticalAlignment="Top" Width="1136.25" Background="#FFB0B0B0" Cursor="Arrow" d:IsLocked="True"/>
+            <Label Content="Summary" HorizontalAlignment="Left" Height="35.178" Margin="2.698,328.062,0,0" VerticalAlignment="Top" Width="147.573" FontSize="21.333"/>
+            <GridSplitter HorizontalAlignment="Left" Height="3" Margin="278.75,50.25,0,0" VerticalAlignment="Top" Width="863.93" Background="#FFB0B0B0" Cursor="Arrow" d:IsLocked="True"/>
+            <Label x:Name="algorithm_name_lbl" Content="" HorizontalAlignment="Left" Height="45.25" Margin="278.75,0,0,0" VerticalAlignment="Top" Width="780" FontSize="26.667" d:IsLocked="True"/>
+            <TextBlock HorizontalAlignment="Left" Height="29" Margin="292.5,276.14,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="127.5" FontSize="13.333" d:IsLocked="True"/>
+            <TextBox x:Name="name_txt" HorizontalAlignment="Left" Height="27.937" Margin="450,277.203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" TextChanged="name_txt_TextChanged" d:IsLocked="True"/>
+            <Grid x:Name="GA_grid" Margin="291.25,71.312,10,125.263" d:IsLocked="True">
+                <TextBlock HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="Fitness Transformation" VerticalAlignment="Top" Width="152.5" FontSize="13.333"/>
+                <ComboBox x:Name="fitnessalgo_selector" SelectedIndex="0" HorizontalAlignment="Left" Height="29" Margin="157.5,0,0,0" VerticalAlignment="Top" Width="320" FontSize="13.333">
+                    <ComboBoxItem Content="Windowing"/>
+                    <ComboBoxItem Content="Exponential"/>
+                    <ComboBoxItem Content="Linear Normalization"/>
+                    <ComboBoxItem Content="Linear Transformation"/>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,51.25,0,0" TextWrapping="Wrap" Text="Selection Algorithm" VerticalAlignment="Top" Width="127.5" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,150.613,0,0" TextWrapping="Wrap" Text="Mutation Algorithm" VerticalAlignment="Top" Width="127.5" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,97.25,0,0" TextWrapping="Wrap" Text="Crossover Algorithm" VerticalAlignment="Top" Width="127.5" FontSize="13.333"/>
+                <CheckBox x:Name="etilism_chk" Content="Etilism" HorizontalAlignment="Left" Height="22.5" Margin="728.93,214.277,0,0" VerticalAlignment="Top" Width="112.5" FontSize="13.333"/>
+                <ComboBox x:Name="crossoveralgo_selector" HorizontalAlignment="Left" Height="29" Margin="157.5,97.25,0,0" VerticalAlignment="Top" Width="320">
+                    <ComboBoxItem Content="Order1 Crossover" IsSelected="True"/>
+                    <ComboBoxItem Content="Order Multiple Crossover"/>
+                    <ComboBoxItem Content="-- Cycle Crossover"/>
+                    <ComboBoxItem Content="Edge Recombination Crossover"/>
+                </ComboBox>
+                <ComboBox x:Name="selectionalgo_selector" HorizontalAlignment="Left" Height="29" Margin="157.5,51.25,0,0" VerticalAlignment="Top" Width="320" SelectedIndex="0" FontSize="13.333">
+                    <ComboBoxItem Content="Rank Selection"/>
+                    <ComboBoxItem Content="Tournament Selection 1"/>
+                    <ComboBoxItem Content="Tournament Selection 2"/>
+                    <ComboBoxItem Content="Stochastic Universal Sampling"/>
+                    <ComboBoxItem Content="Roulette Wheel Selection"/>
+                    <ComboBoxItem Content="Truncation Selection"/>
+                </ComboBox>
+                <ComboBox x:Name="mutationalgo_selector" HorizontalAlignment="Left" Height="31.95" Margin="157.5,146.6,0,0" VerticalAlignment="Top" Width="320">
+                    <ComboBoxItem Content="Random Swap Mutation" IsSelected="True"/>
+                    <ComboBoxItem Content="Single Swap Mutation" />
+                    <ComboBoxItem Content="Scramble Mutation" />
+                    <ComboBoxItem Content="Insertion Mutation"/>
+                    <ComboBoxItem Content="Random Slide Mutation"/>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="501.25,97.25,0,0" TextWrapping="Wrap" Text="No of Generations" VerticalAlignment="Top" Width="111.25" FontSize="13.333"/>
+                <TextBox x:Name="gen_no_txt" HorizontalAlignment="Left" Height="29" Margin="640,97.25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147.5" Text="100"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="501.25,149.55,0,0" TextWrapping="Wrap" Text="Population Size" VerticalAlignment="Top" Width="111.25" FontSize="13.333"/>
+                <TextBox x:Name="pop_size_txt" HorizontalAlignment="Left" Height="27.937" Margin="640,150.613,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147.5" Text="10"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="501.25,0,0,0" TextWrapping="Wrap" Text="Crossover Rate" VerticalAlignment="Top" Width="98.75" FontSize="13.333"/>
+                <TextBox x:Name="crossover_rate_txt" HorizontalAlignment="Left" Height="29" Margin="640,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147.5" Text="0.1"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="501.25,51.25,0,0" TextWrapping="Wrap" Text="Mutation Rate" VerticalAlignment="Top" Width="98.75" FontSize="13.333"/>
+                <TextBox x:Name="mutation_rate_txt" HorizontalAlignment="Left" Height="29" Margin="640,51.25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147.5" Text="0.2"/>
+            </Grid>
+            <Button x:Name="addbtn" Content="Button" HorizontalAlignment="Left" Height="30" Margin="1063.75,9.756,0,405.568" Style="{DynamicResource addbutton}" Width="30" Click="addbtn_Click" d:IsLocked="True"/>
+            <Button x:Name="delbtn" Content="Button" Height="30" Margin="1107.75,9.756,4.93,405.568" Style="{DynamicResource deletebutton}" Width="30" Click="delbtn_Click" d:IsLocked="True"/>
+            <Grid x:Name="ant_grid" Margin="286.25,58.25,10,175.622" Visibility="Collapsed" d:IsLocked="True">
+                <ComboBox x:Name="ant_algo_type_selector" HorizontalAlignment="Left" Margin="163.75,3.75,0,0" VerticalAlignment="Top" Width="375" Height="35" SelectionChanged="ant_algo_type_selector_SelectionChanged">
+                    <ComboBoxItem Content="Ant System" IsSelected="True"/>
+                    <ComboBoxItem Content="Best Worst Ant"/>
+                    <ComboBoxItem Content="Etilist Ant"/>
+                    <ComboBoxItem Content="Min Max Ant"/>
+                    <ComboBoxItem Content="Rank Based Ant"/>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,10.46,0,0" TextWrapping="Wrap" Text="Algorithm Type" VerticalAlignment="Top" Width="127.5" FontSize="13.333"/>
+                <GridSplitter HorizontalAlignment="Left" Height="167.141" Margin="552.5,44.312,0,0" VerticalAlignment="Top" Width="2.5" Cursor="Arrow"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,57.96,0,0" TextWrapping="Wrap" Text="Initial Pheromone" VerticalAlignment="Top" Width="127.5" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="321.25,57.96,0,0" TextWrapping="Wrap" Text="Alpha Value" VerticalAlignment="Top" Width="86.25" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,109.46,0,0" TextWrapping="Wrap" Text="Beta Value" VerticalAlignment="Top" Width="127.5" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,167.21,0,0" TextWrapping="Wrap" Text="Phermone evaporation coefficient" VerticalAlignment="Top" Width="210" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="321.25,109.46,0,0" TextWrapping="Wrap" Text="Constant Q" VerticalAlignment="Top" Width="86.25" FontSize="13.333"/>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="323.75,169.068,0,0" TextWrapping="Wrap" Text="No of ants" VerticalAlignment="Top" Width="75" FontSize="13.333" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.004"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="556.25,9.068,0,0" TextWrapping="Wrap" Text="Iterations" VerticalAlignment="Top" Width="75" FontSize="13.333" RenderTransformOrigin="0.45,0.396">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.004"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBox x:Name="ip_txt" HorizontalAlignment="Left" Height="30.148" Margin="167.5,56.812,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25" Text="3"/>
+                <TextBox x:Name="beta_txt" HorizontalAlignment="Left" Height="30.148" Margin="167.5,108.312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25" Text="2"/>
+                <TextBox x:Name="row_txt" HorizontalAlignment="Left" Height="30.148" Margin="215,166.062,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83.75" Text="0.3"/>
+                <TextBox x:Name="alpha_txt" HorizontalAlignment="Left" Height="30.148" Margin="407.5,56.812,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25" Text="1"/>
+                <TextBox x:Name="q_txt" HorizontalAlignment="Left" Height="30.148" Margin="407.5,108.312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25" Text="3"/>
+                <TextBox x:Name="noofants_txt" HorizontalAlignment="Left" Height="30.148" Margin="407.5,166.062,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25" Text="10"/>
+                <TextBox x:Name="iterations_txt" HorizontalAlignment="Left" Height="30.148" Margin="641.25,9.312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25" Text="100"/>
+                <Grid x:Name="e_grid" Margin="563.75,109.46,73.93,71.845" Visibility="Collapsed">
+                    <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,1.108,0,0" TextWrapping="Wrap" Text="Multiplier" VerticalAlignment="Top" Width="75" FontSize="13.333" RenderTransformOrigin="0.45,0.396">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.004"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBox x:Name="econst_txt" HorizontalAlignment="Left" Height="30.148" Margin="77.5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.25"/>
+                </Grid>
+                <TextBlock HorizontalAlignment="Left" Height="29" Margin="565,59.324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" FontSize="18.667" RenderTransformOrigin="0.45,0.396" Text="Algorithm specific constraints">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.004"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Grid x:Name="min_max_grig" Margin="556.25,108.312,73.93,14.634" Visibility="Collapsed">
+                    <TextBox x:Name="min_txt" HorizontalAlignment="Left" Height="30.148" Margin="106.25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+                    <TextBox x:Name="max_txt" HorizontalAlignment="Left" Height="30.148" Margin="106.25,57.75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+                    <TextBlock HorizontalAlignment="Left" Height="29" Margin="0,0.757,0,0" TextWrapping="Wrap" Text="Min Pheromone" VerticalAlignment="Top" Width="97.5" FontSize="13.333" RenderTransformOrigin="0.45,0.396">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.004"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Height="29" Margin="1.25,59.507,0,0" TextWrapping="Wrap" Text="Max Pheromone" VerticalAlignment="Top" Width="98.75" FontSize="13.333" RenderTransformOrigin="0.45,0.396">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.004"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </Grid>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Height="21.687" Margin="547.832,362.494,0,0" TextWrapping="Wrap" Text="Optimize        :" VerticalAlignment="Top" Width="107.229" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.687" Margin="151.446,362.494,0,0" TextWrapping="Wrap" Text="No of Genetic Algorithms           :" VerticalAlignment="Top" Width="236.762" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="21.687" Margin="151.446,402.253,0,0" TextWrapping="Wrap" Text="No of Ant Colony Algorithms     :" VerticalAlignment="Top" Width="236.762" FontSize="16"/>
+            <CheckBox x:Name="perf_run" Content="Perfomance run" HorizontalAlignment="Left" Height="23.697" Margin="970.029,411.628,0,0" VerticalAlignment="Top" Width="162.651" RenderTransformOrigin="0.494,0.508" FontSize="18.667"/>
+            <TextBlock x:Name="no_gen_algo" HorizontalAlignment="Left" Height="21.687" Margin="410.483,362.494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80.722" FontSize="16"/>
+            <TextBlock x:Name="no_aco_algo" HorizontalAlignment="Left" Height="21.687" Margin="410.483,402.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80.722" FontSize="16"/>
+            <ComboBox x:Name="algo_mode_combo" HorizontalAlignment="Left" Height="21.687" Margin="667.109,362.494,0,0" VerticalAlignment="Top" Width="86.746" SelectedIndex="0">
+            	<ComboBoxItem Content="cost"/>
+            	<ComboBoxItem Content="time"/>
+                <ComboBoxItem Content="cost-time"/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Height="21.687" Margin="547.832,402.253,0,0" TextWrapping="Wrap" Text="Initial Speed   :" VerticalAlignment="Top" Width="107.229" FontSize="16"/>
+            <TextBox x:Name="initial_speed_txt" HorizontalAlignment="Left" Height="21.687" Margin="673.133,402.253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80.722" FontSize="16" Text="3"/>
+        </Grid>
+        <Grid x:Name="exec_grid" Margin="0,85.188,0,0" Visibility="Hidden" d:IsLocked="True">
+            <TextBlock HorizontalAlignment="Left" Height="31.062" Margin="22.5,0,0,0" TextWrapping="Wrap" Text="Algorithm 1" VerticalAlignment="Top" Width="97.5" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="31.062" Margin="704.606,0,0,0" TextWrapping="Wrap" Text="Algorithm 2" VerticalAlignment="Top" Width="91.644" FontSize="16"/>
+            <ComboBox x:Name="algo_list_1" HorizontalAlignment="Left" Height="31" Margin="139,0,0,0" VerticalAlignment="Top" Width="477" SelectionChanged="algo_list_1_SelectionChanged"/>
+            <ComboBox x:Name="algo_list_2" HorizontalAlignment="Left" Height="31.062" Margin="796.25,0,0,0" VerticalAlignment="Top" Width="352.698" SelectionChanged="algo_list_2_SelectionChanged"/>
+            <GridSplitter HorizontalAlignment="Left" Height="365" Margin="804.482,48.562,0,0" VerticalAlignment="Top" Width="1" Background="#FFB0B0B0"/>
+            <Rectangle x:Name="expander" Fill="#FFFFD996" HorizontalAlignment="Left" Height="45.471" Margin="0,418.562,0,0" VerticalAlignment="Top" Width="1158.354"/>
+            <Grid x:Name="ant_exec" Margin="10,26.68,367.698,51.513" Visibility="Hidden">
+                <DockPanel x:Name="ant_anim_panel" Cursor="Arrow" Height="351.025" VerticalAlignment="Top">
+                    <Canvas Background="#FFFFF0D6" x:Name="canvasArea1" Width="778.07" Margin="0,10,0,0" Cursor="Arrow">
+
+                        <Viewbox x:Name="ant_img" Height="50.262" Stretch="Fill" Width="39.75" Canvas.Left="298.75" Canvas.Top="92.5">
+                            <Grid Height="30.501" Width="63.449" d:IsLocked="True">
+                                <Image x:Name="ant1" Source="standingant1.png" Stretch="Fill"/>
+                                <Image x:Name="ant2" Source="standingant2.png" Stretch="Fill" Margin="-0.488,0.478,0.129,-0.11" RenderTransformOrigin="0.5,0.5" d:IsHidden="True">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="179.933"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+
+                            </Grid>
+                        </Viewbox>
+
+                        <Border BorderBrush="Black" BorderThickness="1" Height="343.188" Canvas.Left="-1.59" Width="779.66"/>
+                    </Canvas>
+
+                </DockPanel>
+                <TextBlock x:Name="ant_anim_no_txt" HorizontalAlignment="Left" Height="26.042" Margin="0,10.411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+                <TextBlock x:Name="ant_process_text" HorizontalAlignment="Left" Height="26.042" Margin="157.796,358.209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296.14" FontWeight="Bold"/>
+                <TextBlock x:Name="ant_gen_txt" Margin="69.266,359.184,628.454,4.168" TextWrapping="Wrap"/>
+                <TextBlock x:Name="ant_lb_txt" Margin="453.936,359.184,232.02,4.168" TextWrapping="Wrap" Text="Local Best : Cost -"/>
+                <TextBlock x:Name="ant_lb_time_txt" Margin="682.657,358.003,6.5,5.349" TextWrapping="Wrap"/>
+                <TextBlock x:Name="ant_lb_cost_txt" Margin="549.251,358.209,140.234,5.143" TextWrapping="Wrap"/>
+                <TextBlock Margin="646.016,358.003,97.587,5.349" TextWrapping="Wrap"><Run Text="Time -"/></TextBlock>
+                <TextBlock Margin="4.56,358.209,711.984,5.143" TextWrapping="Wrap" Text="Iteration :"/>
+            </Grid>
+            <Grid x:Name="ga_exec" Margin="22.5,39.154,361.698,46.513" Visibility="Hidden">
+
+                <Canvas Background="#FFFFF0D6" x:Name="ga_canvas_parent1" Margin="0,0,385.423,0" Height="143.378" VerticalAlignment="Top" Cursor="Arrow">
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="143.378" Width="389.327"/>
+                </Canvas>
+                <Canvas Background="#FFFFF0D6" x:Name="ga_canvas_parent2" Margin="389.327,2.352,0,0" Height="141.026" VerticalAlignment="Top" Cursor="Arrow">
+                    <Border BorderBrush="Black" BorderThickness="0,1,1,1" Height="143.378" Width="385.423" Canvas.Top="-2.352"/>
+                </Canvas>
+                <Canvas Background="#FFFFF0D6" x:Name="ga_canvas_child" Margin="0,143.378,0,0" Height="196.614" VerticalAlignment="Top" Cursor="Arrow">
+                    <Border BorderBrush="Black" BorderThickness="1,0,1,1" Height="196.614" Width="774.75"/>
+                </Canvas>
+                <TextBlock x:Name="parent1" TextWrapping="Wrap" Text="Parent 1" Margin="2.352,0,722.987,357.641"/>
+                <TextBlock x:Name="parent1_fit_txt" TextWrapping="Wrap" Text="Fitness :" Margin="2.352,124.555,667.693,236.03"/>
+                <TextBlock x:Name="parent2" TextWrapping="Wrap" Text="Parent 2" Margin="389.256,0,336.083,357.641"/>
+                <TextBlock x:Name="parent2_fit_txt" TextWrapping="Wrap" Text="Fitness :" Margin="390.432,122.203,278.436,236.03"/>
+                <TextBlock x:Name="child_txt" TextWrapping="Wrap" Text="Child 1" Margin="3.528,143.472,721.811,217.697"/>
+                <TextBlock x:Name="child_cost_txt" TextWrapping="Wrap" Text="Cost :" Margin="2.352,320.947,667.693,39.416"/>
+                <TextBlock x:Name="parent1_cost_txt" TextWrapping="Wrap" Text="Cost :" Margin="313.963,2.352,385.494,357.641"/>
+                <TextBlock x:Name="parent1_time_txt" TextWrapping="Wrap" Text="Time :" Margin="313.963,124.555,385.494,236.03"/>
+                <TextBlock x:Name="parent2_cost_txt" TextWrapping="Wrap" Text="Cost :" Margin="699.456,2.352,0,357.641"/>
+                <TextBlock x:Name="parent2_time_txt" TextWrapping="Wrap" Text="Time :" Margin="699.456,124.555,0,236.03"/>
+                <TextBlock x:Name="child_time_txt" TextWrapping="Wrap" Text="Time :" Margin="699.456,320.947,0,39.416"/>
+                <TextBlock x:Name="ga_gen_txt" Margin="69.266,349.776,621.954,6.102" TextWrapping="Wrap"/>
+                <TextBlock x:Name="ga_lb_txt" Margin="453.936,349.776,225.52,6.102" TextWrapping="Wrap" Text="Local Best : Cost -"/>
+                <TextBlock x:Name="ga_lb_time_txt" Margin="682.657,348.595,0,7.283" TextWrapping="Wrap"/>
+                <TextBlock x:Name="ga_lb_cost_txt" Margin="549.251,348.801,133.734,7.077" TextWrapping="Wrap"/>
+                <TextBlock Margin="646.016,348.595,91.087,7.283" TextWrapping="Wrap"><Run Text="Time -"/></TextBlock>
+                <TextBlock Margin="4.56,348.801,705.484,7.077" TextWrapping="Wrap" Text="Generation :"/>
+                <TextBlock x:Name="ga_algo_status_txt" Margin="229.265,348.595,398.426,7.283" TextWrapping="Wrap" Text="Mutation" FontSize="18.667" FontWeight="Bold"/>
+            </Grid>
+            <Slider x:Name="speed_slider" HorizontalAlignment="Left" Margin="572.191,437.075,0,0" VerticalAlignment="Top" Width="219.059" Background="#00FFF9F9" BorderBrush="#00F3F3F3" Foreground="#FFC57F7F" ValueChanged="speed_slider_ValueChanged"/>
+            <Label x:Name="wizard_info" Content="" HorizontalAlignment="Left" Height="150.589" Margin="5.88,275.988,0,0" VerticalAlignment="Top" Width="251.822" Background="White" BorderThickness="1" BorderBrush="#FFB4B4B4" Visibility="Hidden"/>
+            <Grid x:Name="ga_sec_exec" Margin="810.482,48.562,8.824,51.513" Visibility="Hidden">
+                <ListView x:Name="ga_sec_parent_list" HorizontalAlignment="Left" Height="150.588" Margin="1.176,25.305,0,0" VerticalAlignment="Top" Width="338.466" ItemsSource="{Binding GaParentCollection}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding name}" >
+                                <GridViewColumnHeader Content="Genome" ToolTip="{Binding path}" Width="150"/>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding cost}">
+                                <GridViewColumnHeader Content="Cost"></GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding time}">
+                                <GridViewColumnHeader Content="Time"></GridViewColumnHeader>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView x:Name="ga_sec_child_list" HorizontalAlignment="Left" Height="150.588" Margin="0,180.143,0,0" VerticalAlignment="Top" Width="338.466" ItemsSource="{Binding GaChildCollection}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding name}" >
+                                <GridViewColumnHeader Content="Genome" ToolTip="{Binding path}" Width="150" />
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding cost}">
+                                <GridViewColumnHeader Content="Cost"></GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding time}">
+                                <GridViewColumnHeader Content="Time"></GridViewColumnHeader>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock x:Name="ga_sec_lb" HorizontalAlignment="Left" Height="24.632" Margin="5.989,340.368,0,0" TextWrapping="Wrap" Text="Local Best: Cost-" VerticalAlignment="Top" Width="94.118"/>
+                <TextBlock x:Name="ga_sec_cost_txt" HorizontalAlignment="Left" Height="24.632" Margin="100.107,340.368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100.125"/>
+                <TextBlock HorizontalAlignment="Left" Height="24.632" Margin="205.232,340.368,0,0" TextWrapping="Wrap" Text="Time -" VerticalAlignment="Top" Width="36.471"/>
+                <TextBlock x:Name="ga_sec_time_txt" HorizontalAlignment="Left" Height="24.632" Margin="246.703,340.368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91.763"/>
+                <TextBlock HorizontalAlignment="Left" Margin="1.176,0,0,340.368" TextWrapping="Wrap" Text="Generation :" Width="72.425"/>
+                <TextBlock x:Name="ga_sec_gen_txt" HorizontalAlignment="Left" Margin="78.601,0,0,340.368" TextWrapping="Wrap" Width="121.631"/>
+            </Grid>
+            <Grid x:Name="ant_sec_exec" Margin="810.482,44.497,6.007,43.078" Visibility="Hidden">
+                <ListView x:Name="ant_data_list" HorizontalAlignment="Left" Height="154.118" VerticalAlignment="Top" Width="339.642" ItemsSource="{Binding AntDataCollection}" Margin="0,185.16,0,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding name}" >
+                                <GridViewColumnHeader Content="Ant" ToolTip="{Binding path}" Width="150" />
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding cost}"  Width="80">
+                                <GridViewColumnHeader Content="Cost"></GridViewColumnHeader>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding time}"  Width="80">
+                                <GridViewColumnHeader Content="Time"></GridViewColumnHeader>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock x:Name="ant_sec_lb" HorizontalAlignment="Left" Height="25.809" Margin="5.989,345.216,0,0" TextWrapping="Wrap" Text="Local Best : Cost-" VerticalAlignment="Top" Width="97.647"/>
+                <TextBlock x:Name="ant_sec_cost_txt" HorizontalAlignment="Left" Height="25.809" Margin="103.636,345.216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97.647"/>
+                <TextBlock HorizontalAlignment="Left" Height="25.809" Margin="201.283,345.216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43.529" Text="Time -"/>
+                <TextBlock x:Name="ant_sec_time_txt" HorizontalAlignment="Left" Height="25.809" Margin="244.812,345.216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97.647"/>
+                <ListView x:Name="path_data_list" HorizontalAlignment="Left" Height="163.529" VerticalAlignment="Top" Width="339.642" ItemsSource="{Binding PathDataCollection}" Margin="0,16.87,0,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding name}" >
+                                <GridViewColumnHeader Content="Path" ToolTip="{Binding path}" Width="150" />
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding path}">
+                                <GridViewColumnHeader Content="Pheromone" Width="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch"/>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock HorizontalAlignment="Left" Height="20.809" Margin="0,-1.079,0,357.77" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="77.13" Text=" Iteration :"/>
+                <TextBlock x:Name="ant_sec_gen_txt" HorizontalAlignment="Left" Height="20.809" Margin="82.13,-2.41,0,359.101" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="150.624"/>
+            </Grid>
+            <Viewbox x:Name="wizard_button" HorizontalAlignment="Left" Height="50.471" Margin="5.605,413.562,0,0" VerticalAlignment="Top" Width="55.294" MouseLeftButtonDown="wizard_button_MouseLeftButtonDown">
+                <Grid x:Name="mywizard">
+                    <Image x:Name="image2" Height="500" Source="19.png" Stretch="Fill" Width="500" Visibility="Hidden"/>
+                    <Image x:Name="image1" Height="500" Source="18.png" Stretch="Fill" Width="500" Visibility="Hidden"/>
+                    <Image x:Name="image" Height="500" Source="26.png" Stretch="Fill" Width="500" Visibility="Hidden"/>
+                    <Image x:Name="image_6" Height="500" Source="6.png" Stretch="Fill" Width="500"/>
+                </Grid>
+            </Viewbox>
+            <Button x:Name="swap_btn" Content="Swap" HorizontalAlignment="Left" Height="21" Margin="634,7,0,0" VerticalAlignment="Top" Width="52" Click="swap_btn_Click"/>
+            <Grid x:Name="alg_wait" Margin="0,74.057,0,0" d:IsLocked="True">
+            	<Rectangle x:Name="progress_circle" Fill="#00000000" Stroke="Black" Margin="0,-85.543,0,0"/>
+            	<Image x:Name="loading" Margin="451.795,25.3,457.152,115.717" Source="MB_0009_loading.png" Stretch="Fill" Width="250" Height="250" Opacity="0.69" RenderTransformOrigin="0.5,0.5">
+            		<Image.RenderTransform>
+            			<TransformGroup>
+            				<ScaleTransform/>
+            				<SkewTransform/>
+            				<RotateTransform/>
+            				<TranslateTransform/>
+            			</TransformGroup>
+            		</Image.RenderTransform>
+            	</Image>
+            	<TextBlock x:Name="COMPLETED" HorizontalAlignment="Left" Height="114.458" Margin="390.361,90.152,0,0" TextWrapping="Wrap" Text="COMPLETED" VerticalAlignment="Top" Width="413.253" FontSize="64" Foreground="White" Visibility="Hidden"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="report_grid" Margin="7.59,85.188,12.41,10" Visibility="Hidden">
+            <GridSplitter HorizontalAlignment="Left" Height="3" Margin="0,271.43,0,0" VerticalAlignment="Top" Width="1138.948" Background="#FFC9C9C9" d:IsLocked="True"/>
+            <Grid x:Name="currsoln_grid" Margin="0,0,0,188.645" d:IsLocked="True">
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="316.529,90.514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151.627" FontSize="18.667" Text="Found at              :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="316.529,130.896,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151.627" FontSize="18.667" Text="Cost                     :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="316.529,171.278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153.832" FontSize="18.667" Text="Time                    :"/>
+                <TextBlock x:Name="currsoln_foundat_txt" HorizontalAlignment="Left" Height="35.382" Margin="473.156,90.514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Found at    :"/>
+                <TextBlock x:Name="currsoln_cost_txt" HorizontalAlignment="Left" Height="35.382" Margin="473.156,130.896,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Found at    :"/>
+                <TextBlock x:Name="currsoln_time_txt" HorizontalAlignment="Left" Height="35.382" Margin="473.156,171.278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Found at    :"/>
+                <ListBox x:Name="soln_list" HorizontalAlignment="Left" Height="266.43" VerticalAlignment="Top" Width="302.049" SelectionChanged="soln_list_SelectionChanged"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="315.301,9.75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.06" FontSize="18.667" Text="Algorithm Type   :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="315.301,50.132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.06" FontSize="18.667" Text="Run Time             :"/>
+                <TextBlock x:Name="currsoln_type_txt" HorizontalAlignment="Left" Height="35.382" Margin="473.156,9.75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Algorithm Name :"/>
+                <TextBlock x:Name="currsoln_runtime_txt" HorizontalAlignment="Left" Height="35.382" Margin="473.156,50.132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Algorithm Name :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="316.529,211.66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153.832" FontSize="18.667" Text="Rank                    :"/>
+                <TextBlock x:Name="currsoln_rank_txt" HorizontalAlignment="Left" Height="35.382" Margin="473.156,206.66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Found at    :"/>
+                <DockPanel x:Name="dock_curr_soln" Margin="786.047,0.985,-352.901,0" Cursor="Arrow" HorizontalAlignment="Left" Width="352.901">
+                    <Canvas Background="#FFFFF0D6" x:Name="curr_soln_canvas" Width="349.755" Cursor="Arrow"/>
+
+                </DockPanel>
+            </Grid>
+            <Grid x:Name="bestsoln_grid" Margin="2.41,274.61,0,0" d:IsLocked="True">
+                <TextBlock HorizontalAlignment="Left" Height="35.382" TextWrapping="Wrap" VerticalAlignment="Top" Width="230.964" FontSize="26.667" Text="Best Solution" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="0,45.202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.06" FontSize="18.667" Text="Algorithm Name :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="0,80.584,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.06" FontSize="18.667" Text="Algorithm Type   :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="0,115.966,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155.06" FontSize="18.667" Text="Run Time             :"/>
+                <TextBlock x:Name="bestsoln_name_txt" HorizontalAlignment="Left" Height="35.382" Margin="157.855,45.202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Algorithm Name :"/>
+                <TextBlock x:Name="bestsoln_type_txt" HorizontalAlignment="Left" Height="35.382" Margin="157.855,80.584,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Algorithm Name :"/>
+                <TextBlock x:Name="bestsoln_runtime_txt" HorizontalAlignment="Left" Height="35.382" Margin="157.855,115.966,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.891" FontSize="18.667" Text="Algorithm Name :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="475.746,45.202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102.229" FontSize="18.667" Text="Cost          :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="476.951,80.584,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102.229" FontSize="18.667" Text="Time         :"/>
+                <TextBlock HorizontalAlignment="Left" Height="35.382" Margin="475.746,115.966,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102.229" FontSize="18.667" Text="Found at   :"/>
+                <TextBlock x:Name="bestsoln_cost_txt" HorizontalAlignment="Left" Height="36" Margin="583,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18.667" Text="Found at    :"/>
+                <TextBlock x:Name="bestsoln_time_text" HorizontalAlignment="Left" Height="35" Margin="583,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18.667" Text="Found at    :"/>
+                <TextBlock x:Name="bestsoln_foundat_txt" HorizontalAlignment="Left" Height="35" Margin="583,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18.667" Text="Found at    :"/>
+                <DockPanel x:Name="dock_best_soln" Margin="777.552,8.215,-2.056,10" Cursor="Arrow">
+                    <Canvas Background="#FFFFF0D6" x:Name="best_soln_canvas" Width="355.778"/>
+
+                </DockPanel>
+            </Grid>
+            <Image x:Name="graph_btn" Margin="1078.948,214.61,0,180.465" Source="line_graph_icon.png" Stretch="Fill" Width="60" Height="60" Opacity="0.78" MouseLeftButtonDown="graph_btn_MouseLeftButtonDown"/>
+            <Grid x:Name="graph" Margin="-8.433,-10.913,-12.499,-10.339">
+            	<Rectangle x:Name="graphcover" Fill="#FD000000" HorizontalAlignment="Left" Height="476.327" Stroke="Black" VerticalAlignment="Top" Width="1159.88"/>
+				<d3:ChartPlotter Name="plotter" Margin="72.651,28.073,74.217,46.144" Background="#48FFFFFF" Foreground="Black" >
+            <d3:ChartPlotter.HorizontalAxis>
+                <d3:HorizontalAxis Name="myAxis" Foreground="White"/>
+            </d3:ChartPlotter.HorizontalAxis>
+            <d3:ChartPlotter.VerticalAxis>
+                <d3:VerticalIntegerAxis Name="SolnAxis" Foreground="White" ShowMinorTicks="True"/>
+            </d3:ChartPlotter.VerticalAxis>
+                    
+            <d3:Header FontFamily="Arial" Content="Algorithm Performance" Foreground="White"/>
+            <d3:VerticalAxisTitle FontFamily="Arial" Content="Solution" Foreground="White"/>
+            <d3:HorizontalAxisTitle FontFamily="Arial" Content="Time (microseconds)" Foreground="White"/>
+        </d3:ChartPlotter>
+				<Image x:Name="graph_back_btn" Margin="10,28.073,1101.88,400.254" Source="MB_0006_back.png" Stretch="Fill" Opacity="0.55" MouseLeftButtonDown="graph_back_btn_MouseLeftButtonDown"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

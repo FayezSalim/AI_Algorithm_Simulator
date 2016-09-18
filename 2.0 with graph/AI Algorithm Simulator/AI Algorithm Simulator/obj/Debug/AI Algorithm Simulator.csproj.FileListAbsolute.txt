@@ -1,0 +1,65 @@
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.exe.config
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.exe
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\MainWindow.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\MainWindow.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\App.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator_MarkupCompile.cache
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.g.resources
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.Properties.Resources.resources
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI Algorithm Simulator.csproj.GenerateResource.Cache
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.exe
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\WLoading.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\WLoading.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI Algorithm Simulator.csprojResolveAssemblyReference.cache
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\App.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\ResourceDictionary.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator_MarkupCompile.lref
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\DynamicDataDisplay.dll
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\DynamicDataDisplay.xml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.exe.config
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.exe
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.exe
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\DynamicDataDisplay.dll
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\DynamicDataDisplay.xml
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI Algorithm Simulator.csprojResolveAssemblyReference.cache
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\ResourceDictionary.baml
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\WLoading.baml
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\App.baml
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\MainWindow.g.cs
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\WLoading.g.cs
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\App.g.cs
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator_MarkupCompile.cache
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator_MarkupCompile.lref
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\MainWindow.baml
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.g.resources
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.Properties.Resources.resources
+D:\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI Algorithm Simulator.csproj.GenerateResource.Cache
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.exe.config
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.exe
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.pdb
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.exe
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\AI_Algorithm_Simulator.pdb
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\DynamicDataDisplay.xml
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI Algorithm Simulator.csprojResolveAssemblyReference.cache
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\ResourceDictionary.baml
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\WLoading.baml
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\App.baml
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\MainWindow.g.cs
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\WLoading.g.cs
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\App.g.cs
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator_MarkupCompile.cache
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator_MarkupCompile.lref
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\MainWindow.baml
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.g.resources
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI_Algorithm_Simulator.Properties.Resources.resources
+C:\sort\copy\work\Final Project\2.0 with graph\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug\AI Algorithm Simulator.csproj.GenerateResource.Cache

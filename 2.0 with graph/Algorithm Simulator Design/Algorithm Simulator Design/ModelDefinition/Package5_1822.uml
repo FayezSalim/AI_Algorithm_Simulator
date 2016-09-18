@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="1f804b53-ea38-404e-a6b7-4c3272fb1da5"
+  name="Effects"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="9595b7d4-8984-4a4c-b760-0257323ab19e"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Windows.Media.Effects"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a06797a4-4951-4d11-a375-3fa40703d2e7"
+        name="BlurEffect"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9f7a502e-efd8-479d-8251-9d84e2d8f240"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Media.Effects Type%3DBlurEffect"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4074963a-cf07-4977-8baa-0c17024f2ac3"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48a33001-d794-4fa2-be26-9d0c6807d817">
+                <propertyInstance
+                  Id="b1e5e6af-b9d5-4367-a9b6-1a70bb311fe8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="19d97b14-d12b-4936-9512-6a31eecb6158">
+                <propertyInstance
+                  Id="fb41da8d-484c-4f9d-ac3e-e1718cb326ca"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7595c1fc-32ee-4c2c-bfc3-5055e1355aa0">
+                <propertyInstance
+                  Id="0c08b123-3102-436c-b9c8-903eb0970d86"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="816774dd-a46e-4f98-8a10-079808ab6444">
+                <propertyInstance
+                  Id="9d6d8baa-0c66-4080-b621-12b0ddc7e167"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a0225105-e0cc-48be-a3b0-0384e8d592ce">
+                <propertyInstance
+                  Id="e8365e7f-4e8a-4d4d-9c62-aa6ce319fc15"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1886d146-eb2b-4d27-b5cf-2846de5c6262"
+        name="DropShadowEffect"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d0ab4634-4611-42ea-b3a0-d6b64f433bc6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows.Media.Effects Type%3DDropShadowEffect"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4ea126da-06a6-420a-b5eb-9e36ce2adb2e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="085cc191-f395-48e6-a516-e7b1ded61147">
+                <propertyInstance
+                  Id="7572dafa-23d1-4cdb-bdbf-efd320e09a97"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cd3154e9-e1b3-4210-a251-013295e68ce9">
+                <propertyInstance
+                  Id="19d63af1-e245-444f-beac-cce72f2cc385"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ddac2cf-be60-47c9-b74e-f6df03a45e65">
+                <propertyInstance
+                  Id="d14a1d71-fdb9-464b-ba4f-a713d2c0281c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="573fbf38-4550-4924-bbf2-ebb2d54b68b4">
+                <propertyInstance
+                  Id="60f0c6b8-a3bc-412f-8cf7-3887ea3c709d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7d1e8ee2-5ef3-4977-a143-899ebf5ce5f7">
+                <propertyInstance
+                  Id="f1bc4797-a779-4be4-a78c-39c7dd7d2ad1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

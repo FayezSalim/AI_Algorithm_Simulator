@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ea0e575b-df54-48eb-a087-ba5268e39f21" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="92f190dc-d05e-4e62-ab19-f49cf61e52c1" name="User Interface">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3efc97ec-1460-4867-a4ae-392b0092fc86" direction="Bidirectional">
+          <layerMoniker Id="57cc54bf-d762-4436-a59b-5f5fffbd59ad" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="121b81ac-618a-44e8-a934-1ccbefd33817" direction="Bidirectional">
+          <layerMoniker Id="9a35e8bc-7027-41ca-b4b5-fff74abef710" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d068bf53-5e72-43e9-a295-c98af9addff9" direction="Bidirectional">
+          <layerMoniker Id="7e313e3b-e24d-4e19-b5e4-45b3cc2059c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4eccb231-61ed-411f-b27d-e798d836f1eb" direction="Bidirectional">
+          <layerMoniker Id="87cbee00-8499-481b-bbe1-b0d928de0b9c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="7e313e3b-e24d-4e19-b5e4-45b3cc2059c0" name="Algorithm">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="74734479-424e-4f60-ab64-4d6389859bab" direction="Bidirectional">
+          <layerMoniker Id="021440ed-8f53-4150-8083-cb00b8d3443a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="92ad2427-86bc-4949-8cba-9c661d3a305a" direction="Forward">
+          <layerMoniker Id="57cc54bf-d762-4436-a59b-5f5fffbd59ad" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="907274ca-e72f-47dc-a68f-e73de12c59b1" direction="Forward">
+          <layerMoniker Id="9a35e8bc-7027-41ca-b4b5-fff74abef710" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="9a35e8bc-7027-41ca-b4b5-fff74abef710" name="Initial Data Set (User Input)" />
+    <layer Id="021440ed-8f53-4150-8083-cb00b8d3443a" name="Working Data Set" />
+    <layer Id="57cc54bf-d762-4436-a59b-5f5fffbd59ad" name="Algorithm Generator" />
+    <layer Id="87cbee00-8499-481b-bbe1-b0d928de0b9c" name="Observable Collection Object">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="809fc04c-b875-4917-9b37-dea66adaaf48" direction="Bidirectional">
+          <layerMoniker Id="021440ed-8f53-4150-8083-cb00b8d3443a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

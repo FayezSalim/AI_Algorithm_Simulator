@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2e2c5c17-fe5d-4b04-af6e-d45241ed640a"
+  name="Algorithm Simulator Design" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="40a47403-8b42-4c31-ab7e-21e00b15f79b">
+      <profileInstance
+        Id="0d345b47-f63c-4a26-9c09-9e66e7b403be"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <component
+        Id="5512d708-4869-4a4d-9c95-65fab8d443a8"
+        name="Lock"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b8ba8611-a076-4c3b-9a9a-52be1d5cad4b"
+        name="Graphs"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="b3ce6d4d-67a7-4fbb-a81a-840cd18e4b31"
+            name="Multi-Threaded Implementation">
+            <componentMoniker
+              Id="15a7c9bc-22cf-4f75-a6e7-f23594187856"
+              LastKnownName="Multi-Thread functions"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="18966693-339a-4ad2-a069-834aa5c86c41"
+        name="Bar charts"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="9a6411fe-9ea8-45a1-b1e0-bb4201524582"
+            name="Multi-Threaded Implementation">
+            <componentMoniker
+              Id="15a7c9bc-22cf-4f75-a6e7-f23594187856"
+              LastKnownName="Multi-Thread functions"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501"
+        name="User Interface and Control"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="0d497902-b251-4804-bcc6-8b2472380b67"
+            name="Synchronization lock">
+            <componentMoniker
+              Id="5512d708-4869-4a4d-9c95-65fab8d443a8"
+              LastKnownName="Lock"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="ae80ee63-dacc-4dc4-bc01-875d630a2885"
+        name="Form Controls"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="bbd26603-ba5e-4df1-8745-423928514182">
+            <componentMoniker
+              Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501"
+              LastKnownName="User Interface and Control"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="6a59d409-94eb-4acd-bb41-9c25db17fc3b"
+        name="Algorithm Modifiers"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="7af79e45-beaa-4488-a659-75af057c2167">
+            <componentMoniker
+              Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501"
+              LastKnownName="User Interface and Control"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="15a7c9bc-22cf-4f75-a6e7-f23594187856"
+        name="Multi-Thread functions"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="870ee0d8-5cf4-4276-9543-1b8559aff1c0">
+            <componentMoniker
+              Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501"
+              LastKnownName="User Interface and Control"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="8f4a857d-75d3-406e-a8fb-5f8dc4e92491"
+        name="Algorithm Status"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="568dba71-39a1-48af-b8b8-ab8f900c5334"
+            name="Multi-Threaded Implementation">
+            <componentMoniker
+              Id="15a7c9bc-22cf-4f75-a6e7-f23594187856"
+              LastKnownName="Multi-Thread functions"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="d99b0640-eb97-479f-97df-0d9a3a26f7b2"
+        name="Application Controls"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="20298bb1-35a5-4443-b07c-d8ec5950b1bc">
+            <componentMoniker
+              Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501"
+              LastKnownName="User Interface and Control"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="7abb5652-d79d-46a2-8c93-cd7b8d5341a2"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="735c9e66-0d63-4392-a859-6eadbf30abb1"
+        name="Algorithm Type"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="371331ac-2c84-43fb-a30b-95d4a8e16281">
+            <componentMoniker
+              Id="6147ca17-cd29-4c9a-9f00-dd5c16525e5e"
+              LastKnownName="BFS,BDFS,DFS"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="60083d7b-1f05-46ec-93ea-134d0f7f9b81">
+            <componentMoniker
+              Id="0d420feb-3ef5-4ae9-9ae6-dfafe765d90a"
+              LastKnownName="Brute Force"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="544fef02-90c9-4be3-9e3a-149577250ce4">
+            <componentMoniker
+              Id="db9f26de-7a63-4b17-adfa-cb8619332ebc"
+              LastKnownName="Genetic Algorithm"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="1cd46621-2686-4aad-b479-2b90222aaaf2">
+            <componentMoniker
+              Id="b8b4313b-c54c-426a-8c1c-4a31c9e4d380"
+              LastKnownName="Ant Colony Optimization"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="67a4b50e-9a34-4ffe-9527-c31f1cefd79d"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="54c0d481-f165-495d-96ee-c58ef9be328f"
+                LastKnownName="Genetic Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="eaa81bc7-2bad-46bd-9e16-506f99a26e78"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="345a2726-b234-4950-8a97-b6bd7a437551"
+                LastKnownName="Ant Colony Optimization"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="d57a7689-f4f0-4be7-bc4e-74f4ea03f17c"
+            name="Port3"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="c02efde7-5440-4fc1-866f-1f60f64997f2"
+                LastKnownName="Breadth First Search"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="0a5eb29f-ef12-46d6-ad44-fa40418442ef"
+            name="Port4"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="14ae170f-be15-4e86-b8d4-ce681a9943ca"
+                LastKnownName="Best First search"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="f43be252-29b6-4a06-908c-9e47131573a7"
+            name="Port5"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="51a6cc9c-4744-479a-a277-49b1749c51cf"
+                LastKnownName="Depth First Search"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="b5cfa0c8-a69f-47a1-9888-1484e8e3f54f"
+            name="Port6"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="2d31a789-8bf5-4c2d-a965-8e8010ca21e7"
+                LastKnownName="Brute Force"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface
+            Id="8beb9f8a-bb88-4fcb-8c3f-4436804c1895"
+            name="Port7"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="bdc23945-f6ef-41ac-8347-6045d94d0ba8"
+                LastKnownName="Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="995008be-0e80-44f6-aa6a-7119405198c5"
+        name="Genetic Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="5fe7daef-cae2-4476-a434-268aed3d63eb"
+        name="Ant Colony Optimization"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="db9f26de-7a63-4b17-adfa-cb8619332ebc"
+        name="Genetic Algorithm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="982fb024-fa6e-4398-9d29-258ba2fb6fe1">
+            <componentMoniker
+              Id="2b44c057-8cad-4796-bacf-a42b0313cf74"
+              LastKnownName="Mutation Algorithm"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="06994feb-ea16-4410-9a5c-4d8869d1be38">
+            <componentMoniker
+              Id="47bb1e71-435b-4093-a16d-f87286bed855"
+              LastKnownName="Crossover Algorithm"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="3d44e240-071c-4dab-ac43-57e34d691dc2">
+            <componentMoniker
+              Id="3f146f87-8933-4c91-b95d-b23bc120e225"
+              LastKnownName="Selection Algorithm"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="a9d4e46c-085b-428d-9045-ca6a1729ada8"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="b85ddd06-5943-47ce-b00f-501be65fdd0e"
+                LastKnownName="Selection Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="d379dff6-db9e-4808-aaf2-b68c0705eb47"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="84cd2957-ee89-4c4f-9739-5f12b96c4668"
+                LastKnownName="Crossover Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="1e1c621f-3f8f-4e48-a05b-3c77b3246f9a"
+            name="Port3"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="ff0e0fa0-23f3-4cfa-bb97-74d49fd73fbc"
+                LastKnownName="Mutation Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="5a671b43-bed7-44c1-b0cc-ee146f118235"
+            name="Port4"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="66586d24-f7df-4767-b3e0-21fce0f53d55"
+                LastKnownName="Etilism"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface
+            Id="6ef2c931-5881-4237-9caf-92f88f073be2"
+            name="Port5"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="d35008cc-05a1-44bb-9faf-84f448e3e2a2"
+                LastKnownName="Genetic Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b85ddd06-5943-47ce-b00f-501be65fdd0e"
+        name="Selection Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="84cd2957-ee89-4c4f-9739-5f12b96c4668"
+        name="Crossover Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ff0e0fa0-23f3-4cfa-bb97-74d49fd73fbc"
+        name="Mutation Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="54c0d481-f165-495d-96ee-c58ef9be328f"
+        name="Genetic Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="345a2726-b234-4950-8a97-b6bd7a437551"
+        name="Ant Colony Optimization"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="c02efde7-5440-4fc1-866f-1f60f64997f2"
+        name="Breadth First Search"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="14ae170f-be15-4e86-b8d4-ce681a9943ca"
+        name="Best First search"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="51a6cc9c-4744-479a-a277-49b1749c51cf"
+        name="Depth First Search"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="001046cf-39c3-494a-abca-29cc4a67611a"
+        name="Interface2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="2d31a789-8bf5-4c2d-a965-8e8010ca21e7"
+        name="Brute Force"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="66586d24-f7df-4767-b3e0-21fce0f53d55"
+        name="Etilism"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b8b4313b-c54c-426a-8c1c-4a31c9e4d380"
+        name="Ant Colony Optimization"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="f7bcd5dc-cc97-474f-9488-84b37a795c8a">
+            <componentMoniker
+              Id="d53537d9-ea01-47fd-9a17-758e213c26d4"
+              LastKnownName="Ant System"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="f1f025fc-bbb5-46d8-8e80-386e2ef5b0df">
+            <componentMoniker
+              Id="e604a1c5-980c-4004-9cc0-7c9d12953ddb"
+              LastKnownName="Etilist Ant System"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="c9f7612a-13e0-4913-9977-5aa11225fde5">
+            <componentMoniker
+              Id="739fe632-1852-4b2e-b63c-b494564f95b5"
+              LastKnownName="Ranked Ant System"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+          <dependency
+            Id="5d3f88ee-b96b-4e0a-adba-34ee24101672">
+            <componentMoniker
+              Id="84f44b7d-5e16-4ddc-8366-50e5374f0c3a"
+              LastKnownName="Ant Colony"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="61c8d67e-a659-4e36-85f4-94b995fa3a2e"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="d6d49ec8-2fce-4647-a4df-a46334b0de03"
+                LastKnownName="Ant Colony Optimization Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="6147ca17-cd29-4c9a-9f00-dd5c16525e5e"
+        name="BFS,BDFS,DFS"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="9d21a760-521a-40da-9709-65046df5b047"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="f2ddaa45-6e44-4427-b1b6-11de21b90a07"
+                LastKnownName="BFS,BDFS,DFS"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="0d420feb-3ef5-4ae9-9ae6-dfafe765d90a"
+        name="Brute Force"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="5b992b98-7e18-4b66-a065-3f2a84355083"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="4e5542bb-3034-4e9a-b9f6-bf6ebfd7ed40"
+                LastKnownName="Brute Force Algorithm"
+                LastKnownLocation="Algorithm Simulator Design.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="bdc23945-f6ef-41ac-8347-6045d94d0ba8"
+        name="Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d35008cc-05a1-44bb-9faf-84f448e3e2a2"
+        name="Genetic Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d6d49ec8-2fce-4647-a4df-a46334b0de03"
+        name="Ant Colony Optimization Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="4e5542bb-3034-4e9a-b9f6-bf6ebfd7ed40"
+        name="Brute Force Algorithm"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f2ddaa45-6e44-4427-b1b6-11de21b90a07"
+        name="BFS,BDFS,DFS"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="512f0eae-219c-4dc4-9e2c-2cbfae812307"
+        name="Report Generator"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="32558471-481d-4dd7-bd73-50fe2f12c04c">
+            <componentMoniker
+              Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501"
+              LastKnownName="User Interface and Control"
+              LastKnownLocation="Algorithm Simulator Design.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="3f146f87-8933-4c91-b95d-b23bc120e225"
+        name="Selection Algorithm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="47bb1e71-435b-4093-a16d-f87286bed855"
+        name="Crossover Algorithm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="2b44c057-8cad-4796-bacf-a42b0313cf74"
+        name="Mutation Algorithm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="5fb7a790-0e54-4dbe-b920-139f983cdf5e"
+        name="Component1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="d53537d9-ea01-47fd-9a17-758e213c26d4"
+        name="Ant System"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e604a1c5-980c-4004-9cc0-7c9d12953ddb"
+        name="Etilist Ant System"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="739fe632-1852-4b2e-b63c-b494564f95b5"
+        name="Ranked Ant System"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="84f44b7d-5e16-4ddc-8366-50e5374f0c3a"
+        name="Ant Colony"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5219df57-57ad-46b9-bd6b-37758e278953"
+        LastKnownName="AI_Algorithm_Simulator"
+        LastKnownLocation="Package_1821.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="bf43d68a-75a7-4ff9-a056-64039b139bee"
+        LastKnownName="System"
+        LastKnownLocation="Package2_1821.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

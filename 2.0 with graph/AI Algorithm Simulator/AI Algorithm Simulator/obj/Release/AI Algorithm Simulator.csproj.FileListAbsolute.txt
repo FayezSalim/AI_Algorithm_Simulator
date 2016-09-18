@@ -1,0 +1,22 @@
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Release\AI_Algorithm_Simulator.exe.config
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Release\AI_Algorithm_Simulator.exe
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Release\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\ResourceDictionary.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\WLoading.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\App.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\MainWindow.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\WLoading.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\App.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI_Algorithm_Simulator_MarkupCompile.cache
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI_Algorithm_Simulator_MarkupCompile.lref
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\MainWindow.baml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI_Algorithm_Simulator.g.resources
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI_Algorithm_Simulator.Properties.Resources.resources
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI Algorithm Simulator.csproj.GenerateResource.Cache
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI_Algorithm_Simulator.exe
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release\AI Algorithm Simulator.csprojResolveAssemblyReference.cache
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Release\DynamicDataDisplay.dll
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Release\DynamicDataDisplay.xml
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\bin\Release\ru-ru\DynamicDataDisplay.resources.dll

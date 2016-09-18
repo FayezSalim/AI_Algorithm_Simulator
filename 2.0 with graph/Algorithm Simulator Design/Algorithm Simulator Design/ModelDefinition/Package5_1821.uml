@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c9f8c6b8-5457-41f8-ac3b-79b712138ea3"
+  name="Globalization"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="080ac865-4e31-484c-9a16-6e9196b76c82"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Globalization"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="c382b887-a5fe-474a-a634-b48b37fcd343"
+        name="CultureInfo"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="94cd5843-8475-4011-9361-9d597c25c816"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.Globalization Type%3DCultureInfo"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="16f03413-24ba-405f-858f-9810e7d288bb"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="093bee52-dd13-4c73-b763-8c526548f8fe">
+                <propertyInstance
+                  Id="51206ce7-43ab-4c0a-911d-fe2b003cb196"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b2f18e3-18e7-4b35-823c-a87e4eae77c9">
+                <propertyInstance
+                  Id="caf042cf-b713-4a24-a153-4aad31d3ec1c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="463cce20-c023-4d40-8401-8d3c5d9b7814">
+                <propertyInstance
+                  Id="b02dcc5f-cd88-406d-be9b-6a30ea51be98"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ca4e8e3-e3ce-4b2a-9d04-0cda41f90492">
+                <propertyInstance
+                  Id="d90b8e06-4907-41d1-8d7c-86e83c4d2d84"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="438cfee9-6a0d-46eb-9615-88147dd6be2b">
+                <propertyInstance
+                  Id="58c997a9-6813-4499-90a8-2f6cc95ed96d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

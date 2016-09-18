@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0d48f1e9-512d-4c78-b952-28719979868a"
+  name="Animation"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="01f7275a-3943-4579-803d-7a4dbbc0017d"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Windows.Media.Animation"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="000e84ba-82a0-4266-94ce-dd895b80a7ce"
+        name="Storyboard"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="05168054-0450-4a1b-b561-f7b5e0ba1aa0"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationFramework.dll&quot; Namespace%3DSystem.Windows.Media.Animation Type%3DStoryboard"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c3f2c41a-7aa7-40b2-9bc9-5aac21b943aa"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="21b01757-13e6-41c4-99c7-e07ae8413576">
+                <propertyInstance
+                  Id="e9c5b9c2-850a-4e3d-bc97-adf29c05888d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ba69f1d0-e766-49fb-a190-8f7dccffd1ce">
+                <propertyInstance
+                  Id="003f357d-a29d-48ac-9dd6-466e8b2fc82d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d6e8d8e6-359b-4c99-8dec-c80b0cda58a2">
+                <propertyInstance
+                  Id="3ce87fb8-91d4-4880-8ab6-776ee96c9e2e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6014b937-b9a0-4772-a940-0c17927db202">
+                <propertyInstance
+                  Id="71483cd3-126f-4c38-8c2f-bce621ff0826"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5d25fa5a-fe21-4252-8b76-5b5238565db0">
+                <propertyInstance
+                  Id="ca4e0f2c-2986-4a03-a6b4-a0b9ae779e45"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2d0a066f-5af3-49d1-be1f-8a1cb67ba17b"
+        name="BeginStoryboard"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fb931e2d-a42d-450d-9639-c765ae9fdb0c"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationFramework.dll&quot; Namespace%3DSystem.Windows.Media.Animation Type%3DBeginStoryboard"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d9b220c2-c8a5-40e2-b4aa-e93473e3b833"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c170464b-0d06-4bec-bdab-1ffac881a621">
+                <propertyInstance
+                  Id="ab9aa290-9bc9-4b79-aadb-adeacb325fc8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f060a3ce-d3f0-41ce-8740-ba8ee74f421e">
+                <propertyInstance
+                  Id="957f5d72-7b05-4094-a9a9-5b82522bf061"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="882a2557-7455-44de-b35d-7bba6b1ebf77">
+                <propertyInstance
+                  Id="162d3cfc-2ca7-4f45-94a7-404711b2b5e6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d8eabb12-d654-422c-8cfc-5c3689c914eb">
+                <propertyInstance
+                  Id="56ec2949-7478-403e-b44b-ddaa8dfd46ec"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b4e41086-cb7e-4790-9fc6-c920c09aa965">
+                <propertyInstance
+                  Id="2b75a376-6d85-4e29-8aeb-bc6ca8ca1eec"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

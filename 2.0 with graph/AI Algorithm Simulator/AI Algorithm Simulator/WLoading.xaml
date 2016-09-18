@@ -1,0 +1,883 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AI_Algorithm_Simulator.WLoading"
+	x:Name="Window"
+	Title="WLoading"
+	Width="708" Height="344" AllowsTransparency="True" WindowStyle="None" Background="#00000000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+	<Window.Resources>
+		<Storyboard x:Key="bruteforce_storyboard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_B">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Z"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="A"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="B"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_R">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="E"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="F"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="G"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="H"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="I"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="J"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="K"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="L"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="M"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.9" Value="N"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="O"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.1" Value="P"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.2" Value="Q"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.3" Value="R"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_U">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="R"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="S"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="T"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="U"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_T">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="P"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="Q"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="R"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="S"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="T"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_E">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Y"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="Z"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="A"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="B"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="C"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="D"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="E"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_O">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="H"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="I"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="J"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="K"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="L"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="M"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="N"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="O"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_R2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="D"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="E"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="F"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="G"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="H"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="I"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="J"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="K"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="L"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.9" Value="M"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="N"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.1" Value="O"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.2" Value="P"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.3" Value="Q"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="R"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_C">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="T"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="U"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="V"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="W"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="X"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="Y"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="Z"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="A"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="B"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.9" Value="C"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_E2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="B"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="C"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="D"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="E"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="lbl_F">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="X"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="Y"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="Z"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="A"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="B"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="C"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="D"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="E"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="F"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="BruteForceAnime">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-82"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BruteForceAnime">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="BruteForceAnime">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.5" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="evolution_storyboard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="man1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="man1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="man1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="man2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="man2">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="9"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="20"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="man2">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="man3">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="man3">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="16"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="26"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="man3">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="man4">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="man4">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="28"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="38"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="man4">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="man5">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="man5">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="38"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="48"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="man5">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="EvolutionAnime">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="EvolutionAnime">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.8" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="ga_storyboard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image3">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image4">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image3">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image4">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image5">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image6">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image5">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image6">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image7">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image8">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image9">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image10">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image11">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image12">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image13">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image7">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image8">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image9">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image10">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image11">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image12">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image13">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image14">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image14">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image15">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image16">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image17">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image18">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image19">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image20">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image15">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image16">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image17">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image18">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image19">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image20">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image21">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="image22">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image21">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image22">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GaAnime">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GaAnime">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="search_storyboard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="node1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+				<EasingColorKeyFrame KeyTime="0:0:0.4" Value="#FFDFF126"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.6" Value="#FF7E7EFF"/>
+			</ColorAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node3">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="node3">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-106"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="node3">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-59"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="node2">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="89"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="node2">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-63"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rect2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rect3">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse1">
+				<EasingColorKeyFrame KeyTime="0:0:0.6" Value="#FF7E7EFF"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.8" Value="#FFDFF126"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF7E7EFF"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse2">
+				<EasingColorKeyFrame KeyTime="0:0:0.6" Value="#FF7E7EFF"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.8" Value="#FFDFF126"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF7E7EFF"/>
+			</ColorAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node4">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node5">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="node4">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="41"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="node4">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-63"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="6"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="node5">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-63"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="6"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="node5">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-44"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node6">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="node7">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="node6">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-66"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="node6">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="23"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="node7">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-28"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="node7">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-63"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rect4">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rect6">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rect7">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rect7">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.077"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rect7">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.305"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rect7">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.641"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rect5">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rect5">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.094"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rect5">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.56"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rect5">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="2.08"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rect4">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.068"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rect4">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="-1.514"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rect4">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.414"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SearchAnime">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="SearchAnime">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="ant_storyboard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="A">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="A">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="B">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="B">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="C">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="C">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="D">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="D">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="AntAnime">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="AntAnime">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.3" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="matrix_storyboard">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="matrix">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="matrix1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="32"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="572"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="matrix2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="194"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard x:Name="bruteforce_storyboard_BeginStoryboard" Storyboard="{StaticResource ant_storyboard}"/>
+		</EventTrigger>
+	</Window.Triggers>
+
+	<Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
+		<Rectangle Fill="White" HorizontalAlignment="Left" Height="291" Margin="20,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="667" RadiusY="1.5" RadiusX="1.5" StrokeThickness="4" d:IsLocked="True"/>
+		<Grid x:Name="matrix" Margin="20,-758,22,357" Visibility="Collapsed">
+			<Image x:Name="matrix1" Source="loading imgs\the-matrix.jpg" Stretch="Fill" Margin="0,210,0,0" RenderTransformOrigin="0.5,0.5">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="matrix2" Source="loading imgs\the-matrix.jpg" Stretch="Fill" Margin="0,0,0,210" RenderTransformOrigin="0.5,0.5">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="359.887"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+		</Grid>
+		<Grid x:Name="BruteForceAnime" Margin="104,159,90,65.04" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed" d:IsLocked="True">
+			<Grid.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Grid.RenderTransform>
+			<Grid x:Name="mybox_B" Margin="0,0,463,72">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_B" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_R" Margin="51,0,412,72">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" Margin="1,0,-1,0" d:IsLocked="True"/>
+				<Label x:Name="lbl_R" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_U" Margin="104,0,359,72">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_U" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_T" Margin="156,0,307,72">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_T" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_E" Margin="208,0,255,72">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_E" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_O" Margin="307,72,156,0">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_O" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_R2" Margin="359,72,104,0">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_R2" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_C" Margin="411,72,52,0">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_C" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_E2" Margin="463,72,0,0">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_E2" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+			<Grid x:Name="mybox_F" Margin="255,72,208,0">
+				<Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="47.96" RadiusY="1.5" RadiusX="1.5" Stroke="Black" VerticalAlignment="Top" Width="51" d:IsLocked="True"/>
+				<Label x:Name="lbl_F" Content="" HorizontalAlignment="Left" Margin="9,0,0,0" VerticalAlignment="Top" Height="47.96" Width="34.993" BorderThickness="0" FontSize="29.333" FontWeight="Bold" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+			</Grid>
+		</Grid>
+		<Grid x:Name="EvolutionAnime" Margin="35,79,237,47" HorizontalAlignment="Center" VerticalAlignment="Center" d:IsLocked="True">
+			<Image x:Name="man1" Margin="0,128,335,0" Source="loading imgs/evolution/man1.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="man2" Margin="96,80,265,0" Source="loading imgs/evolution/man2.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="man3" Margin="174,56,177,0" Source="loading imgs/evolution/man3.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="man4" Margin="255,31,109,0" Source="loading imgs/evolution/man4.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="man5" Margin="322,0,0,0" Source="loading imgs/evolution/man5.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+		</Grid>
+		<Grid x:Name="GaAnime" Margin="43,47,77,71">
+			<Image x:Name="image2" Margin="10,22,527,138" Source="loading imgs/GA/1.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0" d:IsLocked="True"/>
+			<Image x:Name="image3" Margin="77,22,459,138" Source="loading imgs/GA/2.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0" d:IsLocked="True"/>
+			<Image x:Name="image4" Margin="154,19,383,141" Source="loading imgs/GA/3.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0" d:IsLocked="True"/>
+			<Image x:Name="image5" Margin="457,22,82,138" Source="loading imgs/GA/4.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed" Opacity="0" d:IsLocked="True">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="image6" Margin="549,20,-11,138" Source="loading imgs/GA/5.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed" Opacity="0" d:IsLocked="True">
+				<Image.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Image.RenderTransform>
+			</Image>
+			<Image x:Name="image7" Margin="101,107,443,74" Source="loading imgs/GA/6.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image8" Margin="166,107,381,74" Source="loading imgs/GA/7.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image9" Margin="229,107,320,74" Source="loading imgs/GA/8.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image10" Margin="285,107,265,74" Source="loading imgs/GA/9.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image11" Margin="341,104,204,71" Source="loading imgs/GA/10.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image12" Margin="406,105,146,71" Source="loading imgs/GA/11.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image13" Margin="467,106,90,71" Source="loading imgs/GA/12.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image15" Margin="1,190,555,-14" Source="loading imgs/GA/13.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image16" Margin="61,189,492,-15" Source="loading imgs/GA/14.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image17" Margin="124,192,430,-15" Source="loading imgs/GA/15.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image18" Margin="400,200,157,-17" Source="loading imgs/GA/16.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image19" Margin="513,204,39,-19" Source="loading imgs/GA/18.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image20" Margin="461,200,95,-15" Source="loading imgs/GA/17.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image" Margin="0,3,383,205" Source="loading imgs/GA/A.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0" d:IsLocked="True"/>
+			<Image x:Name="image1" Margin="471,0,0,205" Source="loading imgs/GA/B.jpg" Stretch="Fill" Opacity="0" Visibility="Collapsed" d:IsLocked="True"/>
+			<Image x:Name="image14" Margin="102,91,90,119" Source="loading imgs/GA/C.jpg" Stretch="Fill" RenderTransformOrigin="0.5,1.188" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image21" Margin="5,175,443,34" Source="loading imgs/GA/D.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="image22" Margin="410,181,46,22" Source="loading imgs/GA/E.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+		</Grid>
+		<Grid x:Name="SearchAnime" Margin="84,47,121,65.04" d:IsLocked="True">
+			<Grid x:Name="node1" Margin="214,0,219,173.96" Visibility="Collapsed">
+				<Ellipse x:Name="ellipse" Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="1" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Grid x:Name="node3" Margin="359,76.857,74,97.103" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+				<Grid.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Grid.RenderTransform>
+				<Ellipse x:Name="ellipse1" Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="3" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Grid x:Name="node2" Margin="84,83,349,90.96" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+				<Grid.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Grid.RenderTransform>
+				<Ellipse x:Name="ellipse2" Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="2" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Grid x:Name="node4" Margin="0,168,433,5.96" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+				<Grid.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Grid.RenderTransform>
+				<Ellipse Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="4" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Grid x:Name="node5" Margin="169,168,264,5.96" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+				<Grid.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Grid.RenderTransform>
+				<Ellipse Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="5" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Grid x:Name="node6" Margin="300,173.96,133,0" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+				<Grid.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Grid.RenderTransform>
+				<Ellipse Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="6" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Grid x:Name="node7" Margin="433,168,0,5.96" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+				<Grid.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Grid.RenderTransform>
+				<Ellipse Fill="#FF7E7EFF" HorizontalAlignment="Left" Height="58" StrokeThickness="4" VerticalAlignment="Top" Width="70"/>
+				<Label Content="7" HorizontalAlignment="Left" Height="31" Margin="25,10,0,0" VerticalAlignment="Top" Width="35" FontSize="18.667" d:IsLocked="True"/>
+			</Grid>
+			<Rectangle x:Name="rect2" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="133.231,65.602,0,0" RadiusY="1.5" RadiusX="1.5" VerticalAlignment="Top" Width="91.635" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-29.619"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle x:Name="rect4" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="39.211,148.684,0,0" RadiusY="1.5" RadiusX="1.5" VerticalAlignment="Top" Width="60.494" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-43.034"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle x:Name="rect6" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="327.864,148.63,0,0" RadiusY="1.5" RadiusX="1.5" VerticalAlignment="Top" Width="54.341" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-58.073"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle x:Name="rect7" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="409.864,147.63,0,0" RadiusY="1.5" RadiusX="1.5" VerticalAlignment="Top" Width="54.341" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-125.686"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle x:Name="rect3" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="276.291,58.912,0,0" RadiusY="1.5" RadiusX="1.5" VerticalAlignment="Top" Width="100.129" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-147.557"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle x:Name="rect5" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="139.091,150.112,0,0" RadiusY="1.5" RadiusX="1.5" VerticalAlignment="Top" Width="55.329" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-126.857"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+		</Grid>
+		<Grid x:Name="AntAnime" Margin="55,47,65,71">
+			<Image x:Name="A" Margin="5,0,303,105" Source="loading imgs/antcolony/A.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="C" Margin="0,93,289,0" Source="loading imgs/antcolony/C.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="D" Margin="304,93,0,0" Source="loading imgs/antcolony/D.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+			<Image x:Name="B" Margin="304,3,0,119" Source="loading imgs/antcolony/B.jpg" Stretch="Fill" Visibility="Collapsed" Opacity="0"/>
+		</Grid>
+	</Grid>
+</Window>

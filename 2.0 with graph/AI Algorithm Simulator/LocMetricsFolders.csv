@@ -1,0 +1,20 @@
+Folder,Files,LOC,SLOC-P,SLOC-L,MVG,BLOC,C&SLOC,CLOC,CWORD,HCLOC,HCWORD
+Total,81,22098,17455,7505,781,4022,243,621,3167,0,7
+D:\work\Final Project\AI Algorithm Simulator,81,22098,17455,7505,781,4022,243,621,3167,0,7
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator,79,22033,17422,7492,781,4014,243,597,2998,0,7
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\Properties,3,150,69,27,4,24,4,57,355,0,2
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes,44,3609,3182,1822,435,338,127,89,973,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\Ant,7,1123,983,551,161,76,50,64,552,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA,29,1765,1587,912,209,160,58,18,310,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\crossover,6,321,295,165,46,26,13,0,91,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\fitness,6,300,275,151,37,23,10,2,61,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\mutation,7,254,230,143,26,22,7,2,25,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\selection,8,354,312,192,32,40,11,2,32,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj,17,12936,9194,3558,32,3438,5,304,830,0,5
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Debug,9,6500,4622,1796,16,1722,3,156,430,0,3
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\obj\Release,8,6436,4572,1762,16,1716,2,148,400,0,2
+D:\work\Final Project\AI Algorithm Simulator\TestProject,2,65,33,13,0,8,0,24,169,0,0
+D:\work\Final Project\AI Algorithm Simulator\TestProject\Properties,1,37,15,3,0,5,0,17,120,0,0
+D:\work\Final Project\AI Algorithm Simulator\TestProject\obj,0,0,0,0,0,0,0,0,0,0,0
+D:\work\Final Project\AI Algorithm Simulator\TestProject\obj\Debug,0,0,0,0,0,0,0,0,0,0,0
+D:\work\Final Project\AI Algorithm Simulator\TestProject\obj\Release,0,0,0,0,0,0,0,0,0,0,0

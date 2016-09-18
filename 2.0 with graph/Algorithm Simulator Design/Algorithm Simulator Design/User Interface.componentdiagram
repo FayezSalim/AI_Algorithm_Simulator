@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a3b27679-b48c-473a-8c73-fc5593efbdfc" name="User Interface" linkedPackageId="97bc552c-4d06-484e-bd70-ce3709f9f137" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="44ef578d-25a0-484c-b23d-ec6b17433d79">
+      <profileInstance Id="64ebf745-7282-43b1-84ec-45be71a6dc79" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="183bde00-2f07-4a4c-a7e7-b7646732bfda">
+      <profileInstance Id="80c36b6c-7716-431c-98b2-03ae8c749e55" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="a307f395-204a-490c-a94d-3df3800a0e81" name="Lock" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5512d708-4869-4a4d-9c95-65fab8d443a8" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="0a4e9bea-898d-403f-9104-50225b7a6a79" name="Graphs" visibility="Private" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b8ba8611-a076-4c3b-9a9a-52be1d5cad4b" />
+        <suppliersInternal>
+          <dependency Id="794f745b-952d-4657-a7fd-abb8f4d458a6" name="Multi-Threaded Implementation">
+            <componentMoniker Id="a904692b-ec9e-41d2-b807-11fff7066d05" LastKnownName="Multi-Thread functions" />
+            <elementDefinition Id="b3ce6d4d-67a7-4fbb-a81a-840cd18e4b31" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="5241d8ce-88e2-4a03-8a41-3d763e84e416" name="Bar charts" visibility="Private" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="18966693-339a-4ad2-a069-834aa5c86c41" />
+        <suppliersInternal>
+          <dependency Id="2ee86c0a-df32-4892-914b-610c7dd78931" name="Multi-Threaded Implementation">
+            <componentMoniker Id="a904692b-ec9e-41d2-b807-11fff7066d05" LastKnownName="Multi-Thread functions" />
+            <elementDefinition Id="9a6411fe-9ea8-45a1-b1e0-bb4201524582" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="1f793996-74d2-41d7-b392-04dfac6f503b" name="User Interface and Control" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="80c8377b-8a66-4ad3-a7c8-c711b5a24501" />
+        <suppliersInternal>
+          <dependency Id="de12c278-d201-48b0-ad84-4f501672aeb0" name="Synchronization lock">
+            <componentMoniker Id="a307f395-204a-490c-a94d-3df3800a0e81" LastKnownName="Lock" />
+            <elementDefinition Id="0d497902-b251-4804-bcc6-8b2472380b67" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="76d18bac-024b-4001-ac48-239a35a49a35" name="Form Controls" visibility="Private" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ae80ee63-dacc-4dc4-bc01-875d630a2885" />
+        <suppliersInternal>
+          <dependency Id="4ec41256-1ac5-4a11-a035-a6624d079ef7">
+            <componentMoniker Id="1f793996-74d2-41d7-b392-04dfac6f503b" LastKnownName="User Interface and Control" />
+            <elementDefinition Id="bbd26603-ba5e-4df1-8745-423928514182" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="4d790fbf-98f6-4c3d-b708-1a6f1e1feaf9" name="Algorithm Modifiers" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6a59d409-94eb-4acd-bb41-9c25db17fc3b" />
+        <suppliersInternal>
+          <dependency Id="810b15dc-a820-4f15-af1f-fe5199e70439">
+            <componentMoniker Id="1f793996-74d2-41d7-b392-04dfac6f503b" LastKnownName="User Interface and Control" />
+            <elementDefinition Id="7af79e45-beaa-4488-a659-75af057c2167" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="a904692b-ec9e-41d2-b807-11fff7066d05" name="Multi-Thread functions" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="15a7c9bc-22cf-4f75-a6e7-f23594187856" />
+        <suppliersInternal>
+          <dependency Id="b8cbcadc-fbe2-4019-8c5e-a0931d9a63f3">
+            <componentMoniker Id="1f793996-74d2-41d7-b392-04dfac6f503b" LastKnownName="User Interface and Control" />
+            <elementDefinition Id="870ee0d8-5cf4-4276-9543-1b8559aff1c0" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="411a3773-a69a-4517-bca4-d73e8f38d892" name="Algorithm Status" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8f4a857d-75d3-406e-a8fb-5f8dc4e92491" />
+        <suppliersInternal>
+          <dependency Id="7db049f3-c53d-4403-93d8-ee7ef1a5f4ab" name="Multi-Threaded Implementation">
+            <componentMoniker Id="a904692b-ec9e-41d2-b807-11fff7066d05" LastKnownName="Multi-Thread functions" />
+            <elementDefinition Id="568dba71-39a1-48af-b8b8-ab8f900c5334" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="9af631a9-9f59-4746-b29c-27cb6dc3ca24" name="Application Controls" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d99b0640-eb97-479f-97df-0d9a3a26f7b2" />
+        <suppliersInternal>
+          <dependency Id="3be18921-8873-4315-a8de-04e6bb98f270">
+            <componentMoniker Id="1f793996-74d2-41d7-b392-04dfac6f503b" LastKnownName="User Interface and Control" />
+            <elementDefinition Id="20298bb1-35a5-4443-b07c-d8ec5950b1bc" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="17d79923-10de-4b12-8113-b7bc1421fc49" name="Report Generator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="512f0eae-219c-4dc4-9e2c-2cbfae812307" />
+        <suppliersInternal>
+          <dependency Id="2556fef6-e84f-4195-833d-64b38af24732">
+            <componentMoniker Id="1f793996-74d2-41d7-b392-04dfac6f503b" LastKnownName="User Interface and Control" />
+            <elementDefinition Id="32558471-481d-4dd7-bd73-50fe2f12c04c" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="97bc552c-4d06-484e-bd70-ce3709f9f137" name="Algorithm Simulator Design">
+    <elementDefinition Id="2e2c5c17-fe5d-4b04-af6e-d45241ed640a" />
+  </package>
+</componentModel>

@@ -1,0 +1,7 @@
+D:\work\Final Project\AI Algorithm Simulator\TestProject\bin\Release\TestProject.dll
+D:\work\Final Project\AI Algorithm Simulator\TestProject\bin\Release\TestProject.pdb
+D:\work\Final Project\AI Algorithm Simulator\TestProject\bin\Release\AI_Algorithm_Simulator.exe
+D:\work\Final Project\AI Algorithm Simulator\TestProject\bin\Release\AI_Algorithm_Simulator.pdb
+D:\work\Final Project\AI Algorithm Simulator\TestProject\obj\Release\TestProject.csprojResolveAssemblyReference.cache
+D:\work\Final Project\AI Algorithm Simulator\TestProject\obj\Release\TestProject.dll
+D:\work\Final Project\AI Algorithm Simulator\TestProject\obj\Release\TestProject.pdb

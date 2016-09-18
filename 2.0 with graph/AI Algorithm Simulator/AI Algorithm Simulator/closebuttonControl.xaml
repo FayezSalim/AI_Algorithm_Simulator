@@ -1,0 +1,50 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="AI_Algorithm_Simulator.closebuttonControl"
+	x:Name="UserControl"
+	d:DesignWidth="39.214" d:DesignHeight="12.004">
+	<UserControl.Resources>
+		<Storyboard x:Key="close_hover">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="closeback">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFC75050"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDA3737"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="close_hover_leave">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="closeback">
+				<SplineColorKeyFrame KeyTime="0" Value="#FFDA3737"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.2" Value="#FFC75050"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" Margin="0,-9,0,0">
+		<Grid x:Name="closebutton" HorizontalAlignment="Left" Width="39.214" Height="12.004" VerticalAlignment="Bottom" d:IsLocked="True">
+			<Rectangle x:Name="closeback" Fill="#FFC75050" HorizontalAlignment="Left" Height="25.164" Margin="0,-9.16,0,-4" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="39.214" d:IsLocked="True"/>
+			<Rectangle Fill="White" HorizontalAlignment="Left" Height="3" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="15" RenderTransformOrigin="0.5,0.5" Margin="10.528,-1.316,0,0" UseLayoutRounding="True" d:IsLocked="True">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="-43.814"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+			<Rectangle Fill="White" HorizontalAlignment="Left" Height="3" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="15" RenderTransformOrigin="0.5,0.5" Margin="10.528,-1.316,0,0" UseLayoutRounding="True" d:IsLocked="True">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="48.321"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+		</Grid>
+	</Grid>
+</UserControl>

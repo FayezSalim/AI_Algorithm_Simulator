@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="08a7dcea-a39f-4af5-867a-a46c785600ec"
+  name="Media"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="ea966661-756c-4d9f-bfab-b2894e1b8503"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Windows.Media"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1f804b53-ea38-404e-a6b7-4c3272fb1da5"
+        LastKnownName="Effects"
+        LastKnownLocation="Package5_1822.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0d48f1e9-512d-4c78-b952-28719979868a"
+        LastKnownName="Animation"
+        LastKnownLocation="Package6_1822.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

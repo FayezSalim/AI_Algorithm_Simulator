@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="070821e3-7eaf-46dd-ae75-1433e6b1bf03" name="Algorithm Generator" linkedPackageId="b49d6649-0a86-4a40-96cf-5d316c6bf3eb" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="41e2059e-5799-4199-bb36-c558f19728e6" name="Algorithm Type" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="735c9e66-0d63-4392-a859-6eadbf30abb1" />
+        <suppliersInternal>
+          <dependency Id="40fee34f-5e1e-412a-9eff-bd9b90086581">
+            <componentMoniker Id="8dd76b53-23cb-454b-ae9f-b0629b2c5fe6" LastKnownName="BFS,BDFS,DFS" />
+            <elementDefinition Id="371331ac-2c84-43fb-a30b-95d4a8e16281" />
+          </dependency>
+          <dependency Id="272b3f23-c213-4726-b207-50d97f64db40">
+            <componentMoniker Id="160b728e-692d-4ef9-9f22-d75e9afce7ed" LastKnownName="Brute Force" />
+            <elementDefinition Id="60083d7b-1f05-46ec-93ea-134d0f7f9b81" />
+          </dependency>
+          <dependency Id="a8fad7ac-dbe3-4582-937c-c7a2e756561f">
+            <componentMoniker Id="a13634b2-160e-4adb-a534-fa753a9a80ef" LastKnownName="Genetic Algorithm" />
+            <elementDefinition Id="544fef02-90c9-4be3-9e3a-149577250ce4" />
+          </dependency>
+          <dependency Id="75bcf753-b476-4a8e-ade9-af1c4f472d75">
+            <componentMoniker Id="f58a1a46-999b-43a3-a6b5-30dd350ade42" LastKnownName="Ant Colony Optimization" />
+            <elementDefinition Id="1cd46621-2686-4aad-b479-2b90222aaaf2" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface Id="e51d488d-5447-4ea1-aa80-b3d5bfcc2695" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="67a4b50e-9a34-4ffe-9527-c31f1cefd79d" />
+            <type_NamedElement>
+              <interfaceMoniker Id="98e24ba7-a002-441a-bbd5-d60f466aa18d" LastKnownName="Genetic Algorithm" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="6df3be64-1e3b-4917-a721-98b9a8a98ac1" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="eaa81bc7-2bad-46bd-9e16-506f99a26e78" />
+            <type_NamedElement>
+              <interfaceMoniker Id="52a620b7-4bf8-419e-87eb-a675180b51f4" LastKnownName="Ant Colony Optimization" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="08beaca5-efb0-44ac-bb07-0c6b8342e473" name="Port3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="d57a7689-f4f0-4be7-bc4e-74f4ea03f17c" />
+            <type_NamedElement>
+              <interfaceMoniker Id="e7efdf8b-c148-4389-8250-5330031e0440" LastKnownName="Breadth First Search" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="c882c7c4-1ad2-4076-81ff-94d60bd92aee" name="Port4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="0a5eb29f-ef12-46d6-ad44-fa40418442ef" />
+            <type_NamedElement>
+              <interfaceMoniker Id="1b7b05c3-e951-48b8-9d22-3823f19c4d64" LastKnownName="Best First search" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="30319825-fc3d-4f04-95a8-450ca7ff2973" name="Port5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="f43be252-29b6-4a06-908c-9e47131573a7" />
+            <type_NamedElement>
+              <interfaceMoniker Id="b8d16cda-2be5-4744-84f1-7b207ac11a8a" LastKnownName="Depth First Search" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="2ff8fdc3-44c4-4465-be0a-21c6a1191a4c" name="Port6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="b5cfa0c8-a69f-47a1-9888-1484e8e3f54f" />
+            <type_NamedElement>
+              <interfaceMoniker Id="6666faf9-3de3-42a3-90e6-d46087ddaa85" LastKnownName="Brute Force" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface Id="bed93530-9397-4359-af6f-b7af201a1bb5" name="Port7" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="8beb9f8a-bb88-4fcb-8c3f-4436804c1895" />
+            <type_NamedElement>
+              <interfaceMoniker Id="86b0f504-4b05-4019-907a-b3f6e43656e2" LastKnownName="Algorithm" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="a13634b2-160e-4adb-a534-fa753a9a80ef" name="Genetic Algorithm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="db9f26de-7a63-4b17-adfa-cb8619332ebc" />
+        <suppliersInternal>
+          <dependency Id="eb97eb0f-85d4-4cc5-84ed-1b22f83b3d61">
+            <componentMoniker Id="d9387f56-4eee-440a-9961-01d6e275fa6b" LastKnownName="Mutation Algorithm" />
+            <elementDefinition Id="982fb024-fa6e-4398-9d29-258ba2fb6fe1" />
+          </dependency>
+          <dependency Id="db096aad-2b53-427e-a8af-0f50ada95f9e">
+            <componentMoniker Id="d98aa180-ef98-4e1c-ad28-01e28c24d0bb" LastKnownName="Crossover Algorithm" />
+            <elementDefinition Id="06994feb-ea16-4410-9a5c-4d8869d1be38" />
+          </dependency>
+          <dependency Id="4ac3e533-a9b8-460c-badb-2fcc793a7c77">
+            <componentMoniker Id="a8c6eec4-7f4f-4612-94d8-8560a88846e9" LastKnownName="Selection Algorithm" />
+            <elementDefinition Id="3d44e240-071c-4dab-ac43-57e34d691dc2" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface Id="2b17f810-51c8-4a1f-bdca-6750b4484fb0" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="a9d4e46c-085b-428d-9045-ca6a1729ada8" />
+            <type_NamedElement>
+              <interfaceMoniker Id="fa0dcd82-bdad-4dde-8260-cb478f72503e" LastKnownName="Selection Algorithm" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="d698082c-d598-4a6a-829a-352ed63c4392" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="d379dff6-db9e-4808-aaf2-b68c0705eb47" />
+            <type_NamedElement>
+              <interfaceMoniker Id="c0697dde-0da7-4061-a996-c40575dff8d9" LastKnownName="Crossover Algorithm" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="2ce164b5-76d1-40ea-b805-2ebf431502b7" name="Port3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="1e1c621f-3f8f-4e48-a05b-3c77b3246f9a" />
+            <type_NamedElement>
+              <interfaceMoniker Id="a358b0eb-566a-4995-8c6c-c70cdf3ce7f9" LastKnownName="Mutation Algorithm" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="a411a736-c067-4ff9-9682-d21fb28c75aa" name="Port4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="5a671b43-bed7-44c1-b0cc-ee146f118235" />
+            <type_NamedElement>
+              <interfaceMoniker Id="a184bdbd-4c03-4916-b5ae-f894803edb91" LastKnownName="Etilism" />
+            </type_NamedElement>
+          </requiredInterface>
+          <providedInterface Id="6a63d021-c4eb-465c-a816-a98a2ba66bc9" name="Port5" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="6ef2c931-5881-4237-9caf-92f88f073be2" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7993778f-3a0a-4799-a3a9-83a39020e68b" LastKnownName="Genetic Algorithm" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="fa0dcd82-bdad-4dde-8260-cb478f72503e" name="Selection Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b85ddd06-5943-47ce-b00f-501be65fdd0e" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="c0697dde-0da7-4061-a996-c40575dff8d9" name="Crossover Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="84cd2957-ee89-4c4f-9739-5f12b96c4668" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="a358b0eb-566a-4995-8c6c-c70cdf3ce7f9" name="Mutation Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ff0e0fa0-23f3-4cfa-bb97-74d49fd73fbc" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="98e24ba7-a002-441a-bbd5-d60f466aa18d" name="Genetic Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="54c0d481-f165-495d-96ee-c58ef9be328f" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="52a620b7-4bf8-419e-87eb-a675180b51f4" name="Ant Colony Optimization" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="345a2726-b234-4950-8a97-b6bd7a437551" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="e7efdf8b-c148-4389-8250-5330031e0440" name="Breadth First Search" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c02efde7-5440-4fc1-866f-1f60f64997f2" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="1b7b05c3-e951-48b8-9d22-3823f19c4d64" name="Best First search" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="14ae170f-be15-4e86-b8d4-ce681a9943ca" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="b8d16cda-2be5-4744-84f1-7b207ac11a8a" name="Depth First Search" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="51a6cc9c-4744-479a-a277-49b1749c51cf" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="6666faf9-3de3-42a3-90e6-d46087ddaa85" name="Brute Force" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2d31a789-8bf5-4c2d-a965-8e8010ca21e7" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="a184bdbd-4c03-4916-b5ae-f894803edb91" name="Etilism" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="66586d24-f7df-4767-b3e0-21fce0f53d55" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="f58a1a46-999b-43a3-a6b5-30dd350ade42" name="Ant Colony Optimization" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b8b4313b-c54c-426a-8c1c-4a31c9e4d380" />
+        <suppliersInternal>
+          <dependency Id="39029d2f-a2eb-4da8-830b-26691ef8a34c">
+            <componentMoniker Id="e6e6b3da-8543-469d-b2d9-8cacab2f1501" LastKnownName="Ant System" />
+            <elementDefinition Id="f7bcd5dc-cc97-474f-9488-84b37a795c8a" />
+          </dependency>
+          <dependency Id="d95abcfa-688c-40cd-8eba-183899e89204">
+            <componentMoniker Id="60c9be17-beec-4cfa-86d9-7bb51b9ebe57" LastKnownName="Etilist Ant System" />
+            <elementDefinition Id="f1f025fc-bbb5-46d8-8e80-386e2ef5b0df" />
+          </dependency>
+          <dependency Id="63ab17ec-acaa-4d1e-afde-07485cbb994b">
+            <componentMoniker Id="ddc4b15f-1224-41c7-8cf9-abf3416658c2" LastKnownName="Ranked Ant System" />
+            <elementDefinition Id="c9f7612a-13e0-4913-9977-5aa11225fde5" />
+          </dependency>
+          <dependency Id="1226817d-b788-4c4a-bf1b-75ccd45b4008">
+            <componentMoniker Id="d5c175db-4e11-451c-a167-87ecb0f26abb" LastKnownName="Ant Colony" />
+            <elementDefinition Id="5d3f88ee-b96b-4e0a-adba-34ee24101672" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <providedInterface Id="0f0c8fb7-76c1-49ce-95d8-0972c6889622" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="61c8d67e-a659-4e36-85f4-94b995fa3a2e" />
+            <type_NamedElement>
+              <interfaceMoniker Id="b84aae9d-6aa7-49ae-adf5-628ad6c4366a" LastKnownName="Ant Colony Optimization Algorithm" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="8dd76b53-23cb-454b-ae9f-b0629b2c5fe6" name="BFS,BDFS,DFS" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6147ca17-cd29-4c9a-9f00-dd5c16525e5e" />
+        <ownedAttributesInternal>
+          <providedInterface Id="ea8d962f-d039-4558-b21e-ce96f9936d2b" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="9d21a760-521a-40da-9709-65046df5b047" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7bb06532-2ff7-49e8-be62-09127b0af57a" LastKnownName="BFS,BDFS,DFS" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="160b728e-692d-4ef9-9f22-d75e9afce7ed" name="Brute Force" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0d420feb-3ef5-4ae9-9ae6-dfafe765d90a" />
+        <ownedAttributesInternal>
+          <providedInterface Id="b0c1a7e4-9575-4ccb-839b-23b7b20121c3" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="5b992b98-7e18-4b66-a065-3f2a84355083" />
+            <type_NamedElement>
+              <interfaceMoniker Id="f6273768-6162-402b-a705-199c872c9135" LastKnownName="Brute Force Algorithm" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="86b0f504-4b05-4019-907a-b3f6e43656e2" name="Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bdc23945-f6ef-41ac-8347-6045d94d0ba8" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="7993778f-3a0a-4799-a3a9-83a39020e68b" name="Genetic Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d35008cc-05a1-44bb-9faf-84f448e3e2a2" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="b84aae9d-6aa7-49ae-adf5-628ad6c4366a" name="Ant Colony Optimization Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d6d49ec8-2fce-4647-a4df-a46334b0de03" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="f6273768-6162-402b-a705-199c872c9135" name="Brute Force Algorithm" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4e5542bb-3034-4e9a-b9f6-bf6ebfd7ed40" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="7bb06532-2ff7-49e8-be62-09127b0af57a" name="BFS,BDFS,DFS" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f2ddaa45-6e44-4427-b1b6-11de21b90a07" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="a8c6eec4-7f4f-4612-94d8-8560a88846e9" name="Selection Algorithm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3f146f87-8933-4c91-b95d-b23bc120e225" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="d98aa180-ef98-4e1c-ad28-01e28c24d0bb" name="Crossover Algorithm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="47bb1e71-435b-4093-a16d-f87286bed855" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="d9387f56-4eee-440a-9961-01d6e275fa6b" name="Mutation Algorithm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2b44c057-8cad-4796-bacf-a42b0313cf74" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="e6e6b3da-8543-469d-b2d9-8cacab2f1501" name="Ant System" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d53537d9-ea01-47fd-9a17-758e213c26d4" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="60c9be17-beec-4cfa-86d9-7bb51b9ebe57" name="Etilist Ant System" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e604a1c5-980c-4004-9cc0-7c9d12953ddb" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="ddc4b15f-1224-41c7-8cf9-abf3416658c2" name="Ranked Ant System" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="739fe632-1852-4b2e-b63c-b494564f95b5" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="d5c175db-4e11-451c-a167-87ecb0f26abb" name="Ant Colony" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="84f44b7d-5e16-4ddc-8366-50e5374f0c3a" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="b49d6649-0a86-4a40-96cf-5d316c6bf3eb" name="Algorithm Simulator Design">
+    <elementDefinition Id="2e2c5c17-fe5d-4b04-af6e-d45241ed640a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="071839c2-10db-4066-8977-867c7a025c17">
+        <profileInstance Id="32e76998-6429-4bda-b5de-c7eb17b0e15c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="9ac10ad0-d5d3-49ba-98ed-20cdb5158132">
+        <profileInstance Id="fc7a5cc1-3247-4b97-9466-a8d62e396cf4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</componentModel>

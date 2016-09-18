@@ -1,0 +1,9 @@
+Folder,Files,LOC,SLOC-P,SLOC-L,MVG,BLOC,C&SLOC,CLOC,CWORD,HCLOC,HCWORD
+Total,44,3383,2967,1699,401,327,128,89,983,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes,44,3383,2967,1699,401,327,128,89,983,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\Ant,7,973,836,471,133,72,54,65,580,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA,29,1722,1548,889,203,157,55,17,292,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\crossover,6,321,295,165,46,26,13,0,91,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\fitness,6,300,275,151,37,23,10,2,61,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\mutation,7,254,230,143,26,22,7,2,25,0,0
+D:\work\Final Project\AI Algorithm Simulator\AI Algorithm Simulator\classes\GA\selection,8,354,312,192,32,40,11,2,32,0,0
